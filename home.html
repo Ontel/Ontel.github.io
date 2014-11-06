@@ -2,147 +2,22 @@
 <!DOCTYPE html>
 <html ng-app="ontelsite">
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,300italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="animate.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?&sensor=false"></script>
-    <script src="app.js"></script>
-    <script src="waypoints.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="ontel-favicon.png" />
-    <title>Ontel</title>
+    <!--<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,300italic' rel='stylesheet' type='text/css'>-->
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>-->
+    <!--<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>-->
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>-->
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="animate.css">-->
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <!--<script src="https://maps.googleapis.com/maps/api/js?&sensor=false"></script>-->
+    <!--<script src="app.js"></script>-->
+    <!--<script src="waypoints.min.js"></script>-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!--<link rel="icon" type="image/png" href="ontel-favicon.png" />-->
+    <!--<title>Ontel</title>-->
 
-    <script>
-        $(function() {
-            var headerHeight = $("#menu").height();
-            $('a[href*=#]:not([href=#])').click(function() {
-                event.preventDefault();
-                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                    var scrollToPosition = $(target).offset().top - headerHeight;
-                    if (target.length) {
-                        $('html,body').animate({
-                            scrollTop: scrollToPosition
-                        }, 1000);
-                        //return false;
-                    }
-                }
-            });
-
-            var slrAnimation = function($el) {
-                $el.removeClass('preanimate');
-                $el.addClass('animated fadeInRight');
-            };
-            var sllAnimation = function($el) {
-                $el.removeClass('preanimate');
-                $el.addClass('animated fadeInLeft');
-            };
-
-            $('.sl-l li').each(function(i, el) {
-                setTimeout(function() {sllAnimation($(el))}, i++ * 200);
-            });
-
-            $('.sl-r li').each(function(i, el) {
-                setTimeout(function() {slrAnimation($(el))}, i++ * 200);
-            });
-
-            setTimeout(function() {
-                $('.servicelist .servicedesc').addClass('showservicedesc');
-//    $('.servicelist .servicedesc').addClass('animated rotateInUpLeft');
-            }, 1800);
-            setTimeout(function() {
-                $('.servicelist .servicedesc span').addClass('animated fadeIn');
-                $('.servicelist .servicedesc span').removeClass('preanimate');
-            }, 2200);
-
-            $('#software').waypoint(function() {
-                $('.homeli').addClass('navactive');
-                $('.servicesli').removeClass('navactive');
-                $('.productsli').removeClass('navactive');
-                $('.softwareli').removeClass('navactive');
-                $('.aboutli').removeClass('navactive');
-                $('.contactli').removeClass('navactive');
-            },{ offset: '100%' });
-            $('#software').waypoint(function() {
-                $('.softwareli').addClass('navactive');
-                $('.homeli').removeClass('navactive');
-                $('.productsli').removeClass('navactive');
-                $('.servicesli').removeClass('navactive');
-                $('.aboutli').removeClass('navactive');
-                $('.contactli').removeClass('navactive');
-            },{ offset: '25%' });
-            $('#services').waypoint(function() {
-                $('.servicesli').addClass('navactive');
-                $('.homeli').removeClass('navactive');
-                $('.productsli').removeClass('navactive');
-                $('.softwareli').removeClass('navactive');
-                $('.aboutli').removeClass('navactive');
-                $('.contactli').removeClass('navactive');
-            },{ offset: '25%' });
-            $('#about').waypoint(function() {
-                $('.aboutli').addClass('navactive');
-                $('.homeli').removeClass('navactive');
-                $('.productsli').removeClass('navactive');
-                $('.softwareli').removeClass('navactive');
-                $('.servicesli').removeClass('navactive');
-                $('.contactli').removeClass('navactive');
-            },{ offset: '25%' });
-            $('#contact').waypoint(function() {
-                $('.contactli').addClass('navactive');
-                $('.homeli').removeClass('navactive');
-                $('.productsli').removeClass('navactive');
-                $('.softwareli').removeClass('navactive');
-                $('.aboutli').removeClass('navactive');
-                $('.servicesli').removeClass('navactive');
-            },{ offset: '50%' });
-        });
-        var map;
-        var ontelLatLong;
-        function initialize() {
-            ontelLatLong = new google.maps.LatLng(38.884541,-76.979334);
-
-            var mapStyles = [{
-                "stylers": [
-                    { "saturation": -100 },
-                    { "gamma": 0.9 },
-                    { "lightness": 64 }
-                ]
-            }];
-
-            var mapOptions = {
-                center: ontelLatLong,
-                zoom: 13,
-                styles: mapStyles,
-                icon: 'mappin.png'
-            };
-            map = new google.maps.Map(document.getElementById('map-canvas'),
-                    mapOptions);
-
-            var marker = new google.maps.Marker({
-                position: ontelLatLong,
-                map: map,
-                title:"Ontel",
-                styles: mapStyles,
-                icon: 'mappin.png'
-            });
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-        google.maps.event.addDomListener(window, "resize", function() {
-            var center = map.getCenter();
-            google.maps.event.trigger(map, "resize");
-            map.setCenter(center);
-        });
-
-
-
-    </script>
 </head>
 <body>
 <nav id="sidemenu"></nav>
@@ -156,11 +31,11 @@
             </a>
 
             <ul id="menu" class="topnav">
-                <li class="homeli"><a href="#home">Home</a></li>
-                <li class="softwareli"><a href="##software">Software</a></li>
-                <li class="servicesli"><a href="##services">Services</a></li>
-                <li class="aboutli"><a href="##about">Who We Are</a></li>
-                <li class="contactli"><a href="##contact">Let's Talk</a></li>
+                <li class="homeli"><a href="">Home</a></li>
+                <li class="softwareli"><a href="">Software</a></li>
+                <li class="servicesli"><a href="">Services</a></li>
+                <li class="aboutli"><a href="">Who We Are</a></li>
+                <li class="contactli"><a href="">Let's Talk</a></li>
             </ul>
         </div>
         <div id="menutoggle"><a href ng-click="mobilenav = !mobilenav"><i class="fa fa-bars"></i></a></div>
@@ -176,7 +51,7 @@
                 </div>
             </li>
         </ul>
-        <a href="#software" class="down"><i class="fa fa-angle-down"></i></a>
+        <a href="" class="down softwaredown"><i class="fa fa-angle-down"></i></a>
     </section>
     <section id="software" name="software">
         <div class="container titlecontainer">
@@ -184,25 +59,45 @@
         </div>
         </div>
         <div class="container">
-            <div class="productcontainer">
-                <div class="productlogo">UL</div>
-                <div class="producttitle">Uplink</div>
-                <div class="productdesc">
+            <table id="fullprodtable">
+                <tr><td class="productcontainer"><div class="productlogo">UL</div></td><td class="productcontainer"><div class="productlogo">SC</div></td><td class="productcontainer"><div class="productlogo">SA</div></td></tr>
+                <tr><td><div class="producttitle">Uplink</div></td><td><div class="producttitle">ScoreCard</div></td><td><div class="producttitle">SweepAnalytics</div></td></tr>
+                <tr><td><div class="productdesc">
                     Uplink&#8482; streamlines the deployment and implementation process throughout all stages of the project's workflow from Survey, BOM Creation, Scoping, Check-in/out, Construction, Quality Assurance, and Closeout. Built for mobile teams and remote-management resources, Uplink&#8482; helps to move your team away from Excel and into specialized and user friendly applications that fit your exact needs.
+                </div></td>
+                    <td><div class="productdesc">
+                        ScoreCard&#8482; allows project-management teams to quickly compile project data and KPI frameworks into a single, customizable tool. With ScoreCard&#8482;, managers can drill into the performance of projects and contractors to instantly understand trends from real-time performance data. GC's and markets can know their relative ranking and begin to understand how they fit in the pack.
+                    </div></td>
+                    <td><div class="productdesc">
+                        SweepAnalytics&#8482; automates the labelling, marker positioning, and processing of Sweep results. It then validates the test results to ensure they are complete and meet your performance requirements. Sweep processing and validation time is cut down to minutes instead of hours.
+                    </div></td></tr>
+                <tr><td><div class="moreinfo">More Info</div></td><td><div class="moreinfo">More Info</div></td><td><div class="moreinfo">More Info</div></td></tr>
+
+            </table>
+            <div id="mobileproducts">
+                <div class="productcontainer" style="margin-bottom: 40px;">
+                    <div class="productlogo">UL</div>
+                    <div class="producttitle">Uplink</div>
+                    <div class="productdesc">
+                        Uplink&#8482; streamlines the deployment and implementation process throughout all stages of the project's workflow from Survey, BOM Creation, Scoping, Check-in/out, Construction, Quality Assurance, and Closeout. Built for mobile teams and remote-management resources, Uplink&#8482; helps to move your team away from Excel and into specialized and user friendly applications that fit your exact needs.
+                    </div>
+                    <div class="moreinfo">More Info</div>
                 </div>
-            </div>
-            <div class="productcontainer">
-                <div class="productlogo">SC</div>
-                <div class="producttitle">ScoreCard</div>
-                <div class="productdesc">
-                    ScoreCard&#8482; allows project-management teams to quickly compile project data and KPI frameworks into a single, customizable tool. With ScoreCard&#8482;, managers can drill into the performance of projects and contractors to instantly understand trends from real-time performance data. GC's and markets can know their relative ranking and begin to understand how they fit in the pack.
+                <div class="productcontainer" style="margin-bottom: 40px;">
+                    <div class="productlogo">SC</div>
+                    <div class="producttitle">ScoreCard</div>
+                    <div class="productdesc">
+                        ScoreCard&#8482; allows project-management teams to quickly compile project data and KPI frameworks into a single, customizable tool. With ScoreCard&#8482;, managers can drill into the performance of projects and contractors to instantly understand trends from real-time performance data. GC's and markets can know their relative ranking and begin to understand how they fit in the pack.
+                    </div>
+                    <div class="moreinfo">More Info</div>
                 </div>
-            </div>
-            <div class="productcontainer">
-                <div class="productlogo">SA</div>
-                <div class="producttitle">SweepAnalytics</div>
-                <div class="productdesc">
-                    SweepAnalytics&#8482; automates the labelling, marker positioning, and processing of Sweep results. It then validates the test results to ensure they are complete and meet your performance requirements. Sweep processing and validation time is cut down to minutes instead of hours.
+                <div class="productcontainer">
+                    <div class="productlogo">SA</div>
+                    <div class="producttitle">SweepAnalytics</div>
+                    <div class="productdesc">
+                        SweepAnalytics&#8482; automates the labelling, marker positioning, and processing of Sweep results. It then validates the test results to ensure they are complete and meet your performance requirements. Sweep processing and validation time is cut down to minutes instead of hours.
+                    </div>
+                    <div class="moreinfo">More Info</div>
                 </div>
             </div>
         </div>

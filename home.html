@@ -2,49 +2,68 @@
 <!DOCTYPE html>
 <html ng-app="ontelsite">
 <head>
-    <!--<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,300italic' rel='stylesheet' type='text/css'>-->
-    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>-->
-    <!--<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>-->
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>-->
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>-->
-    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
-    <!--<link rel="stylesheet" type="text/css" href="animate.css">-->
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-    <!--<script src="https://maps.googleapis.com/maps/api/js?&sensor=false"></script>-->
-    <!--<script src="app.js"></script>-->
-    <!--<script src="waypoints.min.js"></script>-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <!--<link rel="icon" type="image/png" href="ontel-favicon.png" />-->
-    <!--<title>Ontel</title>-->
+    <script src="js/foundation/foundation.js"></script>
+    <script src="js/foundation/foundation.equalizer.js"></script>
+    <!--<script src="js/jquery.matchHeight-min.js"></script>-->
+    <script>
+        $(function() {
+            $(document).foundation('equalizer', 'reflow');
+            setTimeout(function(){
+                $(window).trigger('resize');
+                $(window).resize();
+            }, 0);
 
+            $('.center').slick({
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                arrows: true,
+                variableWidth: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+            $(window).resize(function() {
+                console.log("resizing");
+            });
+        });
+        $(window).load(function(){
+            console.log("ok");
+            $(window).resize();
+
+        });
+    </script>
 </head>
 <body>
 <nav id="sidemenu"></nav>
 <div id="bodywrapper" ng-class="{'active':mobilenav}">
-    <header class="navhead navfixed" ng-class="{'navactive':mobilenav}">
-        <!--<div id="bodywrapper">-->
-        <!--<header class="navhead navfixed">-->
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="ontellogo.png" alt="Ontel">
-            </a>
-
-            <ul id="menu" class="topnav">
-                <li class="homeli"><a href="">Home</a></li>
-                <li class="softwareli"><a href="">Software</a></li>
-                <li class="servicesli"><a href="">Services</a></li>
-                <li class="aboutli"><a href="">Who We Are</a></li>
-                <li class="contactli"><a href="">Let's Talk</a></li>
-            </ul>
-        </div>
-        <div id="menutoggle"><a href ng-click="mobilenav = !mobilenav"><i class="fa fa-bars"></i></a></div>
-    </header>
     <section id="landing" name="home">
         <ul class="main-slider bxslider" style="width: auto; position: relative;">
             <li>
                 <div class="caption">
                     <div class="vertical-align welcome">
+                        <div class="caption-title-mobile">
+                            <span style="display: none;">People</span>
+                            <span style="display: none;">Technology</span>
+                            <span style="display: none;">Solutions</span>
+                        </div>
                         <h1 class="caption-title cap-anim animated fadeInDown" data-animation="fadeInDown" style="visibility: visible;">People &#8226; Technology &#8226; Solutions</h1>
                         <p class="caption-subtitle cap-anim animated fadeInUp" data-animation="fadeInUp" style="visibility: visible;">Everything you need to work smarter, closeout faster, and deliver better.</p>
                     </div>
@@ -61,43 +80,44 @@
         <div class="container">
             <table id="fullprodtable">
                 <tr><td class="productcontainer"><div class="productlogo">UL</div></td><td class="productcontainer"><div class="productlogo">SC</div></td><td class="productcontainer"><div class="productlogo">SA</div></td></tr>
-                <tr><td><div class="producttitle">Uplink</div></td><td><div class="producttitle">ScoreCard</div></td><td><div class="producttitle">SweepAnalytics</div></td></tr>
-                <tr><td><div class="productdesc">
-                    Uplink&#8482; streamlines the deployment and implementation process throughout all stages of the project's workflow from Survey, BOM Creation, Scoping, Check-in/out, Construction, Quality Assurance, and Closeout. Built for mobile teams and remote-management resources, Uplink&#8482; helps to move your team away from Excel and into specialized and user friendly applications that fit your exact needs.
-                </div></td>
-                    <td><div class="productdesc">
-                        ScoreCard&#8482; allows project-management teams to quickly compile project data and KPI frameworks into a single, customizable tool. With ScoreCard&#8482;, managers can drill into the performance of projects and contractors to instantly understand trends from real-time performance data. GC's and markets can know their relative ranking and begin to understand how they fit in the pack.
+                <tr><td><div class="producttitle">ScoreCard</div></td><td><div class="producttitle">Uplink</div></td><td><div class="producttitle">SweepAnalytics</div></td></tr>
+                <tr>
+                    <td><div class="productdesc" ng-bind-html="sctext">
+
                     </div></td>
-                    <td><div class="productdesc">
-                        SweepAnalytics&#8482; automates the labelling, marker positioning, and processing of Sweep results. It then validates the test results to ensure they are complete and meet your performance requirements. Sweep processing and validation time is cut down to minutes instead of hours.
+                    <td><div class="productdesc" ng-bind-html="ultext">
+
+                    </div></td>
+                    <td><div class="productdesc" ng-bind-html="satext">
+
                     </div></td></tr>
-                <tr><td><div class="moreinfo">More Info</div></td><td><div class="moreinfo">More Info</div></td><td><div class="moreinfo">More Info</div></td></tr>
+                <!--<tr><td><div class="moreinfo" ng-click="go('/software/uplink')">More Info</div></td><td><div class="moreinfo" ng-click="go('/software/scorecard')">More Info</div></td><td><div class="moreinfo" ng-click="go('/software/sweepanalytics')">More Info</div></td></tr>-->
 
             </table>
             <div id="mobileproducts">
                 <div class="productcontainer" style="margin-bottom: 40px;">
-                    <div class="productlogo">UL</div>
-                    <div class="producttitle">Uplink</div>
-                    <div class="productdesc">
-                        Uplink&#8482; streamlines the deployment and implementation process throughout all stages of the project's workflow from Survey, BOM Creation, Scoping, Check-in/out, Construction, Quality Assurance, and Closeout. Built for mobile teams and remote-management resources, Uplink&#8482; helps to move your team away from Excel and into specialized and user friendly applications that fit your exact needs.
-                    </div>
-                    <div class="moreinfo">More Info</div>
-                </div>
-                <div class="productcontainer" style="margin-bottom: 40px;">
                     <div class="productlogo">SC</div>
                     <div class="producttitle">ScoreCard</div>
-                    <div class="productdesc">
-                        ScoreCard&#8482; allows project-management teams to quickly compile project data and KPI frameworks into a single, customizable tool. With ScoreCard&#8482;, managers can drill into the performance of projects and contractors to instantly understand trends from real-time performance data. GC's and markets can know their relative ranking and begin to understand how they fit in the pack.
+                    <div class="productdesc" ng-bind-html="sctext">
+
                     </div>
-                    <div class="moreinfo">More Info</div>
+                    <!--<div class="moreinfo" ng-click="go('/software/scorecard')">More Info</div>-->
+                </div>
+                <div class="productcontainer" style="margin-bottom: 40px;">
+                    <div class="productlogo">UL</div>
+                    <div class="producttitle">Uplink</div>
+                    <div class="productdesc" ng-bind-html="ultext">
+
+                    </div>
+                    <!--<div class="moreinfo" ng-click="go('/software/uplink')">More Info</div>-->
                 </div>
                 <div class="productcontainer">
                     <div class="productlogo">SA</div>
                     <div class="producttitle">SweepAnalytics</div>
-                    <div class="productdesc">
-                        SweepAnalytics&#8482; automates the labelling, marker positioning, and processing of Sweep results. It then validates the test results to ensure they are complete and meet your performance requirements. Sweep processing and validation time is cut down to minutes instead of hours.
+                    <div class="productdesc" ng-bind-html="satext">
+
                     </div>
-                    <div class="moreinfo">More Info</div>
+                    <!--<div class="moreinfo" ng-click="go('/software/sweepanalytics')">More Info</div>-->
                 </div>
             </div>
         </div>
@@ -107,28 +127,67 @@
             <div class="titlelines"></div>Services<div class="titlelines">
         </div>
         </div>
-        <div class="container">
+            <div class="slider center servicesmob" data-equalizer>
+                <div><h3>
+                    <div class=""><div class="servicename">
+                        <i class="fa fa-check"></i>
+                    </div>
+                        <h1>Closeout and Testing</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">From us testing on site or remotely to photography, technical review, automation, and QA, our closeout services help deliver a COP that meets the customer's spec faster than anyone else.</span></div></div>
+                </h3></div>
+                <!--<div><h3>-->
+                    <!--<div class=""><div class="servicename">-->
+                        <!--<i class="fa fa-code"></i>-->
+                    <!--</div>-->
+                        <!--<h1>Software</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">We design and adapt software specifically for wireless construction companies. We have developed tailored software such as SweepAnalytics™ for Automated Testing Validation, ScoreCard™ for Performance Analysis, and Uplink™, our Wireless Construction mobile application.</span></div></div>-->
+                <!--</h3></div>-->
+                <div><h3>
+                    <div class=""><div class="servicename">
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                        <h1>Hardware</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">Our ComPacks&#8482; connect you with your team in a streamlined and simple manner. Our integrate hardware solutions put us in the field with your crews to support and closeout in realtime.</span></div></div>
+                </h3></div>
+                <div><h3>
+                    <div class=""><div class="servicename">
+                        <i class="fa fa-map-marker"></i>
+                    </div>
+                        <h1>Reporting and Coordination</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">With our team, your COP services are augmented by live staff that can help them bridge the gap between reporting and getting the work done, so that you can get the information into and out of the field necessary to get the job done right.</span></div></div>
+                </h3></div>
+                <div><h3>
+                    <div class=""><div class="servicename">
+                        <i class="fa fa-lightbulb-o"></i>
+                    </div>
+                        <h1>Training and Support</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">Training and support to get the job done right, but most importantly the first time. Our training services are designed to be immersive and efficient, helping your team cost effectively get the training they need throughout the project.</span></div></div>
+                </h3></div>
+                <div><h3>
+                    <div class=""><div class="servicename">
+                        <i class="fa fa-bar-chart"></i>
+                    </div>
+                        <h1>Metrics</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">Measuring performance is key to improving it. Ontel puts the right information where you need it, allowing your team to instantly access KPI's, without needing anything more than a phone.</span></div></div>
+                </h3></div>
+            </div>
+
+            <div class="container" data-equalizer style="display: none;">
             <ul class="servicelist sl-l">
-                <li class="preanimate">
+                <li class="preanimate" >
                     <div class="servicename">
                         <i class="fa fa-check"></i>
                         <div class="service"><h3>Closeout and Testing</h3></div>
                     </div>
-                    <div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">From us testing on site or remotely to photography, technical review, automation, and QA, our closeout services help deliver a COP that meets the customer's spec faster than anyone else.</span></div></div>
+                    <div class="servicedesccontainer"><div class="servicedesc" data-equalizer-watch ><span class="preanimate">From us testing on site or remotely to photography, technical review, automation, and QA, our closeout services help deliver a COP that meets the customer's spec faster than anyone else.</span></div></div>
                 </li>
                 <li class="preanimate">
                     <div class="servicenamecontainer"><div class="servicename">
                         <i class="fa fa-code"></i>
                         <div class="service"><h3>Software</h3></div>
                     </div>
-                        <div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">We design and adapt software specifically for wireless construction companies. We have developed tailored software such as SweepAnalytics&#8482; for Automated Testing Validation, ScoreCard&#8482; for Performance Analysis, and Uplink&#8482;, our Wireless Construction mobile application.</span></div></div>
+                        <div class="servicedesccontainer"><div class="servicedesc" data-equalizer-watch ><span class="preanimate">We design and adapt software specifically for wireless construction companies. We have developed tailored software such as SweepAnalytics&#8482; for Automated Testing Validation, ScoreCard&#8482; for Performance Analysis, and Uplink&#8482;, our Wireless Construction mobile application.</span></div></div>
                 </li>
                 <li class="preanimate">
                     <div class="servicenamecontainer"><div class="servicename">
                         <i class="fa fa-cogs"></i>
                         <div class="service"><h3>Hardware</h3></div>
                     </div>
-                        <div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">Our ComPacks&#8482; connect you with your team in a streamlined and simple manner. Our integrate hardware solutions put us in the field with your crews to support and closeout in realtime.</span></div></div>
+                        <div class="servicedesccontainer"><div class="servicedesc" data-equalizer-watch ><span class="preanimate">Our ComPacks&#8482; connect you with your team in a streamlined and simple manner. Our integrate hardware solutions put us in the field with your crews to support and closeout in realtime.</span></div></div>
                 </li>
             </ul>
             <ul class="servicelist sl-r">
@@ -137,23 +196,23 @@
                         <i class="fa fa-map-marker"></i>
                         <div class="service"><h3>Reporting and Coordination</h3></div>
                     </div>
-                        <div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">With our team, your COP services are augmented by live staff that can help them bridge the gap between reporting and getting the work done, so that you can get the information into and out of the field necessary to get the job done right.</span></div></div>
+                        <div class="servicedesccontainer"><div class="servicedesc" data-equalizer-watch ><span class="preanimate">With our team, your COP services are augmented by live staff that can help them bridge the gap between reporting and getting the work done, so that you can get the information into and out of the field necessary to get the job done right.</span></div></div>
                 </li>
                 <li class="preanimate">
                     <div class="servicenamecontainer"><div class="servicename">
                         <i class="fa fa-lightbulb-o"></i>
                         <div class="service"><h3>Training and Support</h3></div>
                     </div>
-                        <div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">Training and support to get the job done right, but most importantly the first time. Our training services are designed to be immersive and efficient, helping your team cost effectively get the training they need throughout the project.</span></div></div>
+                        <div class="servicedesccontainer"><div class="servicedesc" data-equalizer-watch ><span class="preanimate">Training and support to get the job done right, but most importantly the first time. Our training services are designed to be immersive and efficient, helping your team cost effectively get the training they need throughout the project.</span></div></div>
                 </li>
                 <li class="preanimate">
                     <div class="servicenamecontainer"><div class="servicename">
                         <i class="fa fa-bar-chart"></i>
                         <div class="service"><h3>Metrics</h3></div>
                     </div>
-                        <div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">Measuring performance is key to improving it. Ontel puts the right information where you need it, allowing your team to instantly access KPI's, without needing anything more than a phone.</span></div></div>
+                        <div class="servicedesccontainer"><div class="servicedesc" data-equalizer-watch ><span class="preanimate">Measuring performance is key to improving it. Ontel puts the right information where you need it, allowing your team to instantly access KPI's, without needing anything more than a phone.</span></div></div>
                 </li>
-            </ul>
+            </ul><br style="clear: both">
         </div>
     </section>
     <section id="about" name="about">
@@ -193,7 +252,7 @@
                 <div class="col fourth">
                     <img src="logos/verizon.png">
                 </div>
-            </div>
+            </div><br style="clear: both">
         </div>
         <div class="fineprint">The above companies are not affiliated with Ontel.</div>
     </section>
@@ -202,8 +261,8 @@
             <div class="titlelines"></div>Our Team<div class="titlelines">
         </div>
         </div>
-        <div class="container">
-            <div id="clevel">
+        <div class="container flex-container">
+            <div class="flex-container">
                 <div class="membercontainer">
                     <div class="headshot">
                         <img src="headshot.jpg">
@@ -217,7 +276,7 @@
                     <div class="membername"><div><span class="memname">Justin Bailey</span><span class="memtitle">CTO</span></div></div>
                 </div>
             </div>
-            <div id="vlevel">
+            <div class="flex-container">
                 <div class="membercontainer">
                     <div class="headshot">
                         <img src="headshot.jpg">
@@ -251,13 +310,29 @@
         </div>
         <div id="mapcontainer">
             <div class="mapaddress">Location: 321 18th St. SE Unit 7, Washington, D.C 20003</div>
-            <div id="map-canvas"></div>
+            <map id="map-canvas"></map>
         </div>
     </section>
     <footer>
         <div class="footleft">People &#8226; Technology &#8226; Solutions</div>
-        <div class="footright">&#169; 2014 Ontel LLC. All rights reserved.</div>
+        <div class="footright">&#169; 2014 Ontel LLC. <span class="arr">All rights reserved.</span></div>
     </footer>
 </div>
+<script>
+
+    function tick() {
+        var $obj = $(".caption-title-mobile span");
+//        $obj.first().fadeIn().delay(1000).fadeOut(function () {
+        $obj.first().fadeIn(1000).addClass("animatedslower flipInOutX").delay(3500).fadeOut(function () {
+            $obj.first().removeClass("animatedslower flipInOutX");
+            $obj.first().insertAfter($obj.last());
+            tick();
+        });
+    }
+    tick();
+
+
+
+</script>
 </body>
 </html>

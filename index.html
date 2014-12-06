@@ -5,417 +5,94 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,300italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="foundation.css" />
+    <link rel="stylesheet" href="normalize.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="animate.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?&sensor=false"></script>
+    <link rel="stylesheet" type="text/css" href="slick.css">
+    <script src="https://maps.googleapis.com/maps/api/js?&sensor=false;callback=Initialize"></script>
     <script src="app.js"></script>
     <script src="waypoints.min.js"></script>
+    <script src="js/jquery.dropdown.js"></script>
+    <script src="js/modernizr.custom.63321.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/jquery.equalheights.js"></script>
+    <!--<script src="js/foundation/foundation.js"></script>-->
+    <!--<script src="js/foundation/foundation.equalizer.js"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="ontel-favicon.png" />
     <title>Ontel</title>
     <script>
-        var map;
-        var ontelLatLong;
-        function initialize() {
-            ontelLatLong = new google.maps.LatLng(38.884541,-76.979334);
 
-            var mapStyles = [{
-                "stylers": [
-                    { "saturation": -100 },
-                    { "gamma": 0.9 },
-                    { "lightness": 64 }
+        $( function() {
+            $( '#cd-dropdown' ).dropdown();
+            $('.center').slick({
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                        }
+                    }
                 ]
-            }];
-
-            var mapOptions = {
-                center: ontelLatLong,
-                zoom: 13,
-                styles: mapStyles,
-                icon: 'mappin.png'
-            };
-            map = new google.maps.Map(document.getElementById('map-canvas'),
-                    mapOptions);
-
-            var marker = new google.maps.Marker({
-                position: ontelLatLong,
-                map: map,
-                title:"Ontel",
-                styles: mapStyles,
-                icon: 'mappin.png'
             });
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-        google.maps.event.addDomListener(window, "resize", function() {
-            var center = map.getCenter();
-            google.maps.event.trigger(map, "resize");
-            map.setCenter(center);
         });
     </script>
 
-    <!--<script>-->
-        <!--$(function() {-->
-
-            <!--var slrAnimation = function($el) {-->
-                <!--$el.removeClass('preanimate');-->
-                <!--$el.addClass('animated fadeInRight');-->
-            <!--};-->
-            <!--var sllAnimation = function($el) {-->
-                <!--$el.removeClass('preanimate');-->
-                <!--$el.addClass('animated fadeInLeft');-->
-            <!--};-->
-
-            <!--$('.sl-l li').each(function(i, el) {-->
-                <!--setTimeout(function() {sllAnimation($(el))}, i++ * 200);-->
-            <!--});-->
-
-            <!--$('.sl-r li').each(function(i, el) {-->
-                <!--setTimeout(function() {slrAnimation($(el))}, i++ * 200);-->
-            <!--});-->
-
-            <!--setTimeout(function() {-->
-                <!--$('.servicelist .servicedesc').addClass('showservicedesc');-->
-<!--//    $('.servicelist .servicedesc').addClass('animated rotateInUpLeft');-->
-            <!--}, 1800);-->
-            <!--setTimeout(function() {-->
-                <!--$('.servicelist .servicedesc span').addClass('animated fadeIn');-->
-                <!--$('.servicelist .servicedesc span').removeClass('preanimate');-->
-            <!--}, 2200);-->
-
-            <!--$('#software').waypoint(function() {-->
-                <!--$('.navactive').removeClass('navactive');-->
-                <!--$('.homeli').addClass('navactive');-->
-            <!--},{ offset: '100%' });-->
-            <!--$('#software').waypoint(function() {-->
-                <!--$('.navactive').removeClass('navactive');-->
-                <!--$('.softwareli').addClass('navactive');-->
-            <!--},{ offset: '25%' });-->
-            <!--$('#services').waypoint(function() {-->
-                <!--$('.navactive').removeClass('navactive');-->
-                <!--$('.servicesli').addClass('navactive');-->
-            <!--},{ offset: '25%' });-->
-            <!--$('#about').waypoint(function() {-->
-                <!--$('.navactive').removeClass('navactive');-->
-                <!--$('.aboutli').addClass('navactive');-->
-            <!--},{ offset: '25%' });-->
-            <!--$('#contact').waypoint(function() {-->
-                <!--$('.navactive').removeClass('navactive');-->
-                <!--$('.contactli').addClass('navactive');-->
-            <!--},{ offset: '50%' });-->
-
-            <!--var headerHeight = $("#menu").height();-->
-            <!--$(".homeli").click(function() {-->
-                <!--$('html, body').animate({-->
-                    <!--scrollTop: $("#landing").offset().top-->
-                <!--}, 1000);-->
-            <!--});-->
-            <!--$(".softwareli").click(function() {-->
-                <!--$('html, body').animate({-->
-                    <!--scrollTop: $("#software").offset().top - headerHeight-->
-                <!--}, 1000);-->
-            <!--});-->
-            <!--$(".servicesli").click(function() {-->
-                <!--$('html, body').animate({-->
-                    <!--scrollTop: $("#services").offset().top - headerHeight-->
-                <!--}, 1000);-->
-            <!--});-->
-            <!--$(".aboutli").click(function() {-->
-                <!--$('html, body').animate({-->
-                    <!--scrollTop: $("#about").offset().top - headerHeight-->
-                <!--}, 1000);-->
-            <!--});-->
-            <!--$(".contactli").click(function() {-->
-                <!--$('html, body').animate({-->
-                    <!--scrollTop: $("#contact").offset().top - headerHeight-->
-                <!--}, 1000);-->
-            <!--});-->
-        <!--});-->
-        <!--var map;-->
-        <!--var ontelLatLong;-->
-        <!--function initialize() {-->
-            <!--ontelLatLong = new google.maps.LatLng(38.884541,-76.979334);-->
-
-            <!--var mapStyles = [{-->
-                <!--"stylers": [-->
-                    <!--{ "saturation": -100 },-->
-                    <!--{ "gamma": 0.9 },-->
-                    <!--{ "lightness": 64 }-->
-                <!--]-->
-            <!--}];-->
-
-            <!--var mapOptions = {-->
-                <!--center: ontelLatLong,-->
-                <!--zoom: 13,-->
-                <!--styles: mapStyles,-->
-                <!--icon: 'mappin.png'-->
-            <!--};-->
-            <!--map = new google.maps.Map(document.getElementById('map-canvas'),-->
-                    <!--mapOptions);-->
-
-            <!--var marker = new google.maps.Marker({-->
-                <!--position: ontelLatLong,-->
-                <!--map: map,-->
-                <!--title:"Ontel",-->
-                <!--styles: mapStyles,-->
-                <!--icon: 'mappin.png'-->
-            <!--});-->
-        <!--}-->
-        <!--google.maps.event.addDomListener(window, 'load', initialize);-->
-        <!--google.maps.event.addDomListener(window, "resize", function() {-->
-            <!--var center = map.getCenter();-->
-            <!--google.maps.event.trigger(map, "resize");-->
-            <!--map.setCenter(center);-->
-        <!--});-->
-
-
-
-
-
-    <!--</script>-->
 </head>
-<body>
-<!--<nav id="sidemenu"></nav>-->
-<!--<div id="bodywrapper" ng-class="{'active':mobilenav}">-->
-    <!--<header class="navhead navfixed" ng-class="{'navactive':mobilenav}">-->
-        <!--<!--<div id="bodywrapper">-->-->
-        <!--<!--<header class="navhead navfixed">-->-->
-        <!--<div class="container">-->
-            <!--<a href="index.html" class="logo">-->
-                <!--<img src="ontellogo.png" alt="Ontel">-->
-            <!--</a>-->
-
-            <!--<ul id="menu" class="topnav">-->
-                <!--<li class="homeli"><a href="">Home</a></li>-->
-                <!--<li class="softwareli"><a href="">Software</a></li>-->
-                <!--<li class="servicesli"><a href="">Services</a></li>-->
-                <!--<li class="aboutli"><a href="">Who We Are</a></li>-->
-                <!--<li class="contactli"><a href="">Let's Talk</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-        <!--<div id="menutoggle"><a href ng-click="mobilenav = !mobilenav"><i class="fa fa-bars"></i></a></div>-->
-    <!--</header>-->
-    <!--<section id="landing" name="home">-->
-        <!--<ul class="main-slider bxslider" style="width: auto; position: relative;">-->
-            <!--<li>-->
-                <!--<div class="caption">-->
-                    <!--<div class="vertical-align welcome">-->
-                        <!--<h1 class="caption-title cap-anim animated fadeInDown" data-animation="fadeInDown" style="visibility: visible;">People &#8226; Technology &#8226; Solutions</h1>-->
-                        <!--<p class="caption-subtitle cap-anim animated fadeInUp" data-animation="fadeInUp" style="visibility: visible;">Everything you need to work smarter, closeout faster, and deliver better.</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-        <!--</ul>-->
-        <!--<a href="#software" class="down"><i class="fa fa-angle-down"></i></a>-->
-    <!--</section>-->
-    <!--<section id="software" name="software">-->
-        <!--<div class="container titlecontainer">-->
-            <!--<div class="titlelines"></div>Software<div class="titlelines">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="container">-->
-            <!--<table id="fullprodtable">-->
-                <!--<tr><td class="productcontainer"><div class="productlogo">UL</div></td><td class="productcontainer"><div class="productlogo">SC</div></td><td class="productcontainer"><div class="productlogo">SA</div></td></tr>-->
-                <!--<tr><td><div class="producttitle">Uplink</div></td><td><div class="producttitle">ScoreCard</div></td><td><div class="producttitle">SweepAnalytics</div></td></tr>-->
-                <!--<tr><td><div class="productdesc">-->
-                    <!--Uplink&#8482; streamlines the deployment and implementation process throughout all stages of the project's workflow from Survey, BOM Creation, Scoping, Check-in/out, Construction, Quality Assurance, and Closeout. Built for mobile teams and remote-management resources, Uplink&#8482; helps to move your team away from Excel and into specialized and user friendly applications that fit your exact needs.-->
-                <!--</div></td>-->
-                 <!--<td><div class="productdesc">-->
-                        <!--ScoreCard&#8482; allows project-management teams to quickly compile project data and KPI frameworks into a single, customizable tool. With ScoreCard&#8482;, managers can drill into the performance of projects and contractors to instantly understand trends from real-time performance data. GC's and markets can know their relative ranking and begin to understand how they fit in the pack.-->
-                    <!--</div></td>-->
-                    <!--<td><div class="productdesc">-->
-                        <!--SweepAnalytics&#8482; automates the labelling, marker positioning, and processing of Sweep results. It then validates the test results to ensure they are complete and meet your performance requirements. Sweep processing and validation time is cut down to minutes instead of hours.-->
-                    <!--</div></td></tr>-->
-                <!--<tr><td><div class="moreinfo">More Info</div></td><td><div class="moreinfo">More Info</div></td><td><div class="moreinfo">More Info</div></td></tr>-->
-
-            <!--</table>-->
-            <!--<div id="mobileproducts">-->
-            <!--<div class="productcontainer" style="margin-bottom: 40px;">-->
-                <!--<div class="productlogo">UL</div>-->
-                <!--<div class="producttitle">Uplink</div>-->
-                <!--<div class="productdesc">-->
-                    <!--Uplink&#8482; streamlines the deployment and implementation process throughout all stages of the project's workflow from Survey, BOM Creation, Scoping, Check-in/out, Construction, Quality Assurance, and Closeout. Built for mobile teams and remote-management resources, Uplink&#8482; helps to move your team away from Excel and into specialized and user friendly applications that fit your exact needs.-->
-                <!--</div>-->
-                <!--<div class="moreinfo">More Info</div>-->
-            <!--</div>-->
-            <!--<div class="productcontainer" style="margin-bottom: 40px;">-->
-                <!--<div class="productlogo">SC</div>-->
-                <!--<div class="producttitle">ScoreCard</div>-->
-                <!--<div class="productdesc">-->
-                    <!--ScoreCard&#8482; allows project-management teams to quickly compile project data and KPI frameworks into a single, customizable tool. With ScoreCard&#8482;, managers can drill into the performance of projects and contractors to instantly understand trends from real-time performance data. GC's and markets can know their relative ranking and begin to understand how they fit in the pack.-->
-                <!--</div>-->
-                <!--<div class="moreinfo">More Info</div>-->
-            <!--</div>-->
-            <!--<div class="productcontainer">-->
-                <!--<div class="productlogo">SA</div>-->
-                <!--<div class="producttitle">SweepAnalytics</div>-->
-                <!--<div class="productdesc">-->
-                    <!--SweepAnalytics&#8482; automates the labelling, marker positioning, and processing of Sweep results. It then validates the test results to ensure they are complete and meet your performance requirements. Sweep processing and validation time is cut down to minutes instead of hours.-->
-                <!--</div>-->
-                <!--<div class="moreinfo">More Info</div>-->
-            <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</section>-->
-    <!--<section id="services" name="services">-->
-        <!--<div class="container titlecontainer">-->
-            <!--<div class="titlelines"></div>Services<div class="titlelines">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="container">-->
-            <!--<ul class="servicelist sl-l">-->
-                <!--<li class="preanimate">-->
-                    <!--<div class="servicename">-->
-                        <!--<i class="fa fa-check"></i>-->
-                        <!--<div class="service"><h3>Closeout and Testing</h3></div>-->
-                    <!--</div>-->
-                    <!--<div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">From us testing on site or remotely to photography, technical review, automation, and QA, our closeout services help deliver a COP that meets the customer's spec faster than anyone else.</span></div></div>-->
-                <!--</li>-->
-                <!--<li class="preanimate">-->
-                    <!--<div class="servicenamecontainer"><div class="servicename">-->
-                        <!--<i class="fa fa-code"></i>-->
-                        <!--<div class="service"><h3>Software</h3></div>-->
-                    <!--</div>-->
-                        <!--<div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">We design and adapt software specifically for wireless construction companies. We have developed tailored software such as SweepAnalytics&#8482; for Automated Testing Validation, ScoreCard&#8482; for Performance Analysis, and Uplink&#8482;, our Wireless Construction mobile application.</span></div></div>-->
-                <!--</li>-->
-                <!--<li class="preanimate">-->
-                    <!--<div class="servicenamecontainer"><div class="servicename">-->
-                        <!--<i class="fa fa-cogs"></i>-->
-                        <!--<div class="service"><h3>Hardware</h3></div>-->
-                    <!--</div>-->
-                        <!--<div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">Our ComPacks&#8482; connect you with your team in a streamlined and simple manner. Our integrate hardware solutions put us in the field with your crews to support and closeout in realtime.</span></div></div>-->
-                <!--</li>-->
-            <!--</ul>-->
-            <!--<ul class="servicelist sl-r">-->
-                <!--<li class="preanimate">-->
-                    <!--<div class="servicenamecontainer"><div class="servicename">-->
-                        <!--<i class="fa fa-map-marker"></i>-->
-                        <!--<div class="service"><h3>Reporting and Coordination</h3></div>-->
-                    <!--</div>-->
-                        <!--<div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">With our team, your COP services are augmented by live staff that can help them bridge the gap between reporting and getting the work done, so that you can get the information into and out of the field necessary to get the job done right.</span></div></div>-->
-                <!--</li>-->
-                <!--<li class="preanimate">-->
-                    <!--<div class="servicenamecontainer"><div class="servicename">-->
-                        <!--<i class="fa fa-lightbulb-o"></i>-->
-                        <!--<div class="service"><h3>Training and Support</h3></div>-->
-                    <!--</div>-->
-                        <!--<div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">Training and support to get the job done right, but most importantly the first time. Our training services are designed to be immersive and efficient, helping your team cost effectively get the training they need throughout the project.</span></div></div>-->
-                <!--</li>-->
-                <!--<li class="preanimate">-->
-                    <!--<div class="servicenamecontainer"><div class="servicename">-->
-                        <!--<i class="fa fa-bar-chart"></i>-->
-                        <!--<div class="service"><h3>Metrics</h3></div>-->
-                    <!--</div>-->
-                        <!--<div class="servicedesccontainer"><div class="servicedesc"><span class="preanimate">Measuring performance is key to improving it. Ontel puts the right information where you need it, allowing your team to instantly access KPI's, without needing anything more than a phone.</span></div></div>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</section>-->
-    <!--<section id="about" name="about">-->
-        <!--<div class="container titlecontainer">-->
-            <!--<div class="titlelines"></div>Who We Are<div class="titlelines">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div id="companydescription" class="container">-->
-            <!--Founded in 2013, Ontel is a Washington, D.C. based consultancy that provides specialized technology, management, and administration for General and Technical Contractors in the telecommunications industry.-->
-        <!--</div>-->
-        <!--<div id="pastclients" class="container">-->
-            <!--<span>Prior to founding Ontel, we built and managed wireless projects for many of America's largest carriers, equipment manufacturers, and implementation services companies:</span>-->
-            <!--<div class="clientlogos">-->
-                <!--<div class="col fourth">-->
-                    <!--<img src="logos/al.png">-->
-                <!--</div>-->
-                <!--<div class="col fourth">-->
-                    <!--<img src="logos/att.png">-->
-                <!--</div>-->
-                <!--<div class="col fourth">-->
-                    <!--<img src="logos/clear.png">-->
-                <!--</div>-->
-                <!--<div class="col fourth">-->
-                    <!--<img src="logos/cricket.png">-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="clientlogos">-->
-                <!--<div class="col fourth">-->
-                    <!--<img src="logos/ericsson.png">-->
-                <!--</div>-->
-                <!--<div class="col fourth">-->
-                    <!--<img src="logos/sprint.png">-->
-                <!--</div>-->
-                <!--<div class="col fourth">-->
-                    <!--<img src="logos/tmobile.png">-->
-                <!--</div>-->
-                <!--<div class="col fourth">-->
-                    <!--<img src="logos/verizon.png">-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="fineprint">The above companies are not affiliated with Ontel.</div>-->
-    <!--</section>-->
-    <!--<section id="team" name="team">-->
-        <!--<div class="container titlecontainer">-->
-            <!--<div class="titlelines"></div>Our Team<div class="titlelines">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="container">-->
-            <!--<div id="clevel">-->
-                <!--<div class="membercontainer">-->
-                    <!--<div class="headshot">-->
-                        <!--<img src="headshot.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="membername"><div><span class="memname">Kris Kerr</span><span class="memtitle">CEO</span></div></div>-->
-                <!--</div>-->
-                <!--<div class="membercontainer">-->
-                    <!--<div class="headshot">-->
-                        <!--<img src="headshot.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="membername"><div><span class="memname">Justin Bailey</span><span class="memtitle">CTO</span></div></div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div id="vlevel">-->
-                <!--<div class="membercontainer">-->
-                    <!--<div class="headshot">-->
-                        <!--<img src="headshot.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="membername"><div><span class="memname">Gary Yuen</span><span class="memtitle">VP of Operations</span></div></div>-->
-                <!--</div>-->
-                <!--<div class="membercontainer">-->
-                    <!--<div class="headshot">-->
-                        <!--<img src="headshot.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="membername"><div><span class="memname">McKenny Corbin</span><span class="memtitle">VP of Construction</span></div></div>-->
-                <!--</div>-->
-                <!--<div class="membercontainer">-->
-                    <!--<div class="headshot">-->
-                        <!--<img src="headshot.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="membername"><div><span class="memname">Brandon Funkhouser</span><span class="memtitle">VP of Technology</span></div></div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section id="contact" name="contact">-->
-        <!--<div class="container titlecontainer">-->
-            <!--<div class="titlelines"></div>Let's Talk<div class="titlelines">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div id="contactinfo">-->
-            <!--<div id="email"><a href="mailto:hello@ontel.co">hello@ontel.co</a></div>-->
-            <!--<div id="tel">202.621.9453</div>-->
-        <!--</div>-->
-        <!--<div id="mapcontainer">-->
-            <!--<div class="mapaddress">Location: 321 18th St. SE Unit 7, Washington, D.C 20003</div>-->
-            <!--<div id="map-canvas"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-    <!--<footer>-->
-        <!--<div class="footleft">People &#8226; Technology &#8226; Solutions</div>-->
-        <!--<div class="footright">&#169; 2014 Ontel LLC. All rights reserved.</div>-->
-    <!--</footer>-->
-<!--</div>-->
-    <div ng-view></div>
+<body ng-controller="TopController">
+<header class="navhead navfixed" ng-class="{'navactive':mobilenav}">
+    <!--<div id="bodywrapper">-->
+    <!--<header class="navhead navfixed">-->
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="ontellogo.png" alt="Ontel">
+        </a>
+        <select id="cd-dropdown" class="cd-select" style="display: none;">
+            <option value="-1" ng-click="go('/')" selected>Navigation</option>
+            <option value="1" ng-click="go('/')" class="homeli">Home</option>
+            <option value="2" ng-click="go('/')" class="softwareli">Software</option>
+            <option value="3" ng-click="go('/')" class="servicesli">Services</option>
+            <option value="4" ng-click="go('/')" class="aboutli">Who We Are</option>
+            <option value="5" ng-click="go('/')" class="contactli">Let's Talk</option>
+        </select>
+        <ul id="menu" class="topnav">
+            <li class="homeli"><a href="" ng-click="go('/')">Home</a></li>
+            <li class="softwareli"><a href="" ng-click="go('/')">Software</a></li>
+            <li class="servicesli"><a href="" ng-click="go('/')">Services</a></li>
+            <li class="aboutli"><a href="" ng-click="go('/')">Who We Are</a></li>
+            <li class="contactli"><a href="" ng-click="go('/')">Let's Talk</a></li>
+        </ul>
+    </div>
+    <div id="menutoggle"><a href ng-click="mobilenav = !mobilenav"><i class="fa fa-bars"></i></a></div>
+    <div togglesubnav class="softwarenav">
+        <ul class="subnav hidenav">
+            <li class="ul"><a href="" ng-click="go('/software/uplink')">Uplink</a><div class="productoption"></div></li>
+            <li class="sc"><a href="" ng-click="go('/software/scorecard')">ScoreCard</a><div class="productoption"></li>
+            <li class="sa"><a href="" ng-click="go('/software/sweepanalytics')">SweepAnalytics</a><div class="productoption"></li>
+        </ul>
+    </div>
+</header>
+    <div class="page {{pageClass}}"ng-view></div>
 </body>
+
 </html>

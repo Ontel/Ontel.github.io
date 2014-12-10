@@ -315,7 +315,9 @@ header .container {
     width: 100%;
     height: 100vh;
     background: #3d6473;
-    background: url(cloudsbg4.jpg) no-repeat center center fixed;
+    background: url(cloudsbg4.jpg) no-repeat;
+    background-position: center center;
+    /*background-attachment: fixed;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -943,7 +945,7 @@ height: 100%;
 .cd-dropdown,
 .cd-select {
     position: relative;
-    width: 190px;
+    width: 150px;
     /*margin: 0 auto;*/
     display: block;
     float: right;
@@ -960,7 +962,7 @@ height: 100%;
     font-size: 0.9em;
     background: #fff;
     display: block;
-    padding: 0 50px 0 30px;
+    padding: 0 43px 0 10px;
     position: relative;
     cursor: pointer;
 }
@@ -970,7 +972,7 @@ height: 100%;
     position: absolute;
     right: 0px;
     top: 15%;
-    width: 50px;
+    width: 35px;
     text-align: center;
     font-size: 12px;
     padding: 10px;
@@ -999,7 +1001,7 @@ height: 100%;
     width: 100%;
     background: #fff;
     line-height: 60px;
-    padding: 0 30px 0 30px;
+    padding: 0 10px 0 10px;
     display: block;
     color: inherit;
     cursor: pointer;
@@ -1113,7 +1115,7 @@ height: 100%;
 .center h3{opacity:0.5;transition:all 300ms ease;}
 .margin-40{margin-bottom:40px;}
 .more,.button.first{margin-top:40px;}
-.slick-slider{margin:30px auto 50px;}
+/*.slick-slider{margin:30px auto 50px;}*/
 .slick-slide{width: 300px;}
 
 .slider .heading {

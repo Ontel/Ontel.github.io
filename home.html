@@ -41,12 +41,14 @@
                 ]
             });
             $(window).resize(function() {
-                console.log("resizing");
+//                console.log("resizing");
+                $(document).foundation('equalizer', 'reflow');
             });
         });
         $(window).load(function(){
-            console.log("ok");
+//            console.log("ok");
             $(window).resize();
+            $(document).foundation('equalizer', 'reflow');
 
         });
     </script>
@@ -129,10 +131,10 @@
         </div>
             <div class="slider center servicesmob" data-equalizer>
                 <div><h3>
-                    <div class=""><div class="servicename">
+                    <div  data-equalizer-watch><div class="servicename">
                         <i class="fa fa-check"></i>
                     </div>
-                        <h1>Closeout and Testing</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">From us testing on site or remotely to photography, technical review, automation, and QA, our closeout services help deliver a COP that meets the customer's spec faster than anyone else.</span></div></div>
+                        <div class="heading">Closeout and Testing</div><div class="servicedesc servicedescmob" ><span class="">From us testing on site or remotely to photography, technical review, automation, and QA, our closeout services help deliver a COP that meets the customer's spec faster than anyone else.</span></div></div>
                 </h3></div>
                 <!--<div><h3>-->
                     <!--<div class=""><div class="servicename">-->
@@ -141,28 +143,28 @@
                         <!--<h1>Software</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">We design and adapt software specifically for wireless construction companies. We have developed tailored software such as SweepAnalytics™ for Automated Testing Validation, ScoreCard™ for Performance Analysis, and Uplink™, our Wireless Construction mobile application.</span></div></div>-->
                 <!--</h3></div>-->
                 <div><h3>
-                    <div class=""><div class="servicename">
+                    <div  data-equalizer-watch><div class="servicename">
                         <i class="fa fa-cogs"></i>
                     </div>
-                        <h1>Hardware</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">Our ComPacks&#8482; connect you with your team in a streamlined and simple manner. Our integrate hardware solutions put us in the field with your crews to support and closeout in realtime.</span></div></div>
+                        <div class="heading">Hardware</div><div class="servicedesc servicedescmob" ><span class="">Our ComPacks&#8482; connect you with your team in a streamlined and simple manner. Our integrate hardware solutions put us in the field with your crews to support and closeout in realtime.</span></div></div>
                 </h3></div>
                 <div><h3>
-                    <div class=""><div class="servicename">
+                    <div data-equalizer-watch><div class="servicename">
                         <i class="fa fa-map-marker"></i>
                     </div>
-                        <h1>Reporting and Coordination</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">With our team, your COP services are augmented by live staff that can help them bridge the gap between reporting and getting the work done, so that you can get the information into and out of the field necessary to get the job done right.</span></div></div>
+                        <div class="heading">Reporting and Coordination</div><div class="servicedesc servicedescmob" ><span class="">With our team, your COP services are augmented by live staff that can help them bridge the gap between reporting and getting the work done, so that you can get the information into and out of the field necessary to get the job done right.</span></div></div>
                 </h3></div>
                 <div><h3>
-                    <div class=""><div class="servicename">
+                    <div data-equalizer-watch><div class="servicename">
                         <i class="fa fa-lightbulb-o"></i>
                     </div>
-                        <h1>Training and Support</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">Training and support to get the job done right, but most importantly the first time. Our training services are designed to be immersive and efficient, helping your team cost effectively get the training they need throughout the project.</span></div></div>
+                        <div class="heading">Training and Support</div><div class="servicedesc servicedescmob" ><span class="">Training and support to get the job done right, but most importantly the first time. Our training services are designed to be immersive and efficient, helping your team cost effectively get the training they need throughout the project.</span></div></div>
                 </h3></div>
                 <div><h3>
-                    <div class=""><div class="servicename">
+                    <div data-equalizer-watch><div class="servicename">
                         <i class="fa fa-bar-chart"></i>
                     </div>
-                        <h1>Metrics</h1><div class="servicedesc servicedescmob" data-equalizer-watch><span class="">Measuring performance is key to improving it. Ontel puts the right information where you need it, allowing your team to instantly access KPI's, without needing anything more than a phone.</span></div></div>
+                        <div class="heading">Metrics</div><div class="servicedesc servicedescmob" ><span class="">Measuring performance is key to improving it. Ontel puts the right information where you need it, allowing your team to instantly access KPI's, without needing anything more than a phone.</span></div></div>
                 </h3></div>
             </div>
 

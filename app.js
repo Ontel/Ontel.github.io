@@ -98,7 +98,7 @@ angular.module('ontelsite',['ngRoute','ngAnimate'])
             $('#software').waypoint(function () {
                 $('.navactive').removeClass('navactive');
                 $('.topnav .homeli').addClass('navactive');
-            }, {offset: '100%'});
+            }, {offset: '40%'});
             $('#software').waypoint(function () {
                 $('.navactive').removeClass('navactive');
                 $('.topnav .softwareli').addClass('navactive');

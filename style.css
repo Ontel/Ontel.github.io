@@ -671,7 +671,7 @@ footer {
     float: left;
     margin-left: 1%;
     margin-right: 1%;
-    width: 216px;
+    width: 275px;
     float: left;
     margin: 6px;
 }
@@ -682,8 +682,8 @@ footer {
 
 .headshot img {
     width: 100%;
-    /*display: none;*/
-    display: block;
+    display: none;
+    /*display: block;*/
 }
 
 .membername {
@@ -703,11 +703,16 @@ footer {
 }
 
 .membername > div {
-    /*position: absolute;*/
-    width: 100%;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    /*top: calc(50% - 20px);*/
+    width: 66%;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    float: right;
+    background: #fff;
+}
+
+.membername > img {
+    width: 33%;
+    float: left;
 }
 
 .memtitle {
@@ -1196,6 +1201,18 @@ height: 100%;
     .headshot img {
         display: block;
     }
+    .membername > img {
+        display: none;
+    }
+    .membername > div {
+        width: 100%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .membercontainer {
+        width: 216px;
+    }
+
 }
 
 

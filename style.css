@@ -682,7 +682,8 @@ footer {
 
 .headshot img {
     width: 100%;
-    display: none;
+    /*display: none;*/
+    display: block;
 }
 
 .membername {

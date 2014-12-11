@@ -67,31 +67,6 @@ angular.module('ontelsite',['ngRoute','ngAnimate'])
 
     $(function() {
 
-//        var slrAnimation = function($el) {
-//            $el.removeClass('preanimate');
-//            $el.addClass('animated fadeInRight');
-//        };
-//        var sllAnimation = function($el) {
-//            $el.removeClass('preanimate');
-//            $el.addClass('animated fadeInLeft');
-//        };
-//
-//        $('.sl-l li').each(function(i, el) {
-//            setTimeout(function() {sllAnimation($(el))}, i++ * 200);
-//        });
-//
-//        $('.sl-r li').each(function(i, el) {
-//            setTimeout(function() {slrAnimation($(el))}, i++ * 200);
-//        });
-//
-//        setTimeout(function() {
-//            $('.servicelist .servicedesc').addClass('showservicedesc');
-////    $('.servicelist .servicedesc').addClass('animated rotateInUpLeft');
-//        }, 1800);
-//        setTimeout(function() {
-//            $('.servicelist .servicedesc span').addClass('animated fadeIn');
-//            $('.servicelist .servicedesc span').removeClass('preanimate');
-//        }, 2200);
 
         if($routeParams.product !== 'uplink' || $routeParams.product !== 'scorecard' || $routeParams.product !== 'sweepanalytics') {
 

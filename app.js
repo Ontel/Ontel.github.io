@@ -41,7 +41,7 @@ angular.module('ontelsite',['ngRoute','ngAnimate'])
 
     $scope.ultext = $sce.trustAsHtml("Uplink&#8482; streamlines the deployment and implementation process throughout all stages of the project's workflow from Survey, BOM Creation, Scoping, Check-in/out, Construction, Quality Assurance, and Closeout. Built for mobile teams and remote-management resources, Uplink&#8482; helps to move your team away from Excel and into specialized and user friendly applications that fit your exact needs.");
     $scope.sctext = $sce.trustAsHtml("ScoreCard&#8482; allows project-management teams to quickly compile project data and KPI frameworks into a single, customizable tool. With ScoreCard&#8482;, managers can drill into the performance of projects and contractors to instantly understand trends from real-time performance data. GC's and markets can know their relative ranking and begin to understand how they fit in the pack.");
-    $scope.satext = $sce.trustAsHtml("SweepAnalytics&#8482; automates the labelling, marker positioning, and processing of Sweep results. It then validates the test results to ensure they are complete and meet your performance requirements. Sweep processing and validation time is cut down to minutes instead of hours.");
+    $scope.satext = $sce.trustAsHtml("SweepAnalytics&#8482;  takes the guesswork out of ensuring test results are complete and to market specifications. Our tool automates the labeling, marker positioning, and processing of Sweep results in minutes, from what used to be hours. The tool can then easily export test results directly into customer deliverables preventing data entry and error.");
 
     $scope.go = function ( path ) {
         $scope.pageClass = 'page-home';

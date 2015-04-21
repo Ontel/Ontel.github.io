@@ -56,7 +56,7 @@ table {
 .page {
     bottom: 0;
     position: absolute;
-    top: 0;
+    top: 60px;
     width: 100%;
 }
 
@@ -313,7 +313,7 @@ header .container {
 #landing {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 60px);
     background: #3d6473;
     background: url(cloudsbg4.jpg) no-repeat;
     background-position: center center;
@@ -1153,6 +1153,72 @@ height: 100%;
 
 .arr {
     display: none;
+}
+
+#linklist {
+    display: inline-block;
+    float: left;
+    width: 300px;
+    height: calc(100vh - 60px);
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+#contentframe {
+    display: inline-block;
+    float: right;
+    width: calc(100vw - 300px);
+    height: calc(100vh - 60px);
+}
+.card {
+    background: #ffffff;
+    box-shadow: 0px 2px 3px #ddd;
+    border-radius: 2px;
+    color: #444;
+    min-height: 20px;
+    line-height: 20px;
+    padding: 10px;
+    padding-right: 20px;
+    position: relative;
+    font-size: 0.9em;
+    font-weight: 300;
+    text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    /*-moz-transition: color .2s ease-in;*/
+    /*-o-transition: color .2s ease-in;*/
+    /*-webkit-transition: color .2s ease-in;*/
+    /*transition: color .2s ease-in;*/
+    cursor: pointer;
+}
+
+.card .fa {
+    color: #ddd;
+    position: absolute;
+    right: 10px;
+    line-height: 20px;
+}
+
+.active .fa {
+    color: #3d6473;
+}
+
+.active {
+    color: #3d6473;
+    font-weight: 400;
+}
+
+.portal-landing {
+    background: rgb(224, 224, 224);
+}
+
+.category-header {
+    padding: 14px 0px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #999;
 }
 
 @media only screen and (max-width: 639px) {

@@ -1,7 +1,7 @@
 /**
  * Created by Brandon on 11/4/14.
  */
-angular.module('ontelsite',['ngRoute','ngAnimate'])
+angular.module('ontelsite',['ngRoute','ngAnimate','firebase','angular.filter'])
 
 .config(['$routeProvider', '$locationProvider','$logProvider', function($routeProvider,$locationProvider,$logProvider) {
         $logProvider.debugEnabled(true);
@@ -22,6 +22,14 @@ angular.module('ontelsite',['ngRoute','ngAnimate'])
         .when('/scorecard', {
             templateUrl: 'scorecard.html',
             controller: 'ScoreCardController'
+        })
+        .when('/internal', {
+            templateUrl: 'portal.html',
+            controller: 'InternalPortalController'
+        })
+        .when('/internal/:linkId', {
+            templateUrl: 'portal.html',
+            controller: 'InternalPortalController'
         });
 
 }])
@@ -95,7 +103,7 @@ angular.module('ontelsite',['ngRoute','ngAnimate'])
 
             $(".homeli").click(function () {
                 $('html, body').animate({
-                    scrollTop: $("#landing").offset().top
+                    scrollTop: $("#landing").offset().top - headerHeight
                 }, 1000);
             });
             $(".softwareli").click(function () {
@@ -154,6 +162,23 @@ angular.module('ontelsite',['ngRoute','ngAnimate'])
         $scope.go = function ( path ) {
             $location.path( path );
         };
+}])
+
+
+.controller('InternalPortalController', ['$scope','$firebaseObject','$sce', function($scope, $firebaseObject, $sce) {
+        var ref = new Firebase("https://ontel-intranet.firebaseio.com/links");
+        $scope.links = $firebaseObject(ref);
+
+        $scope.currentFrame = "";
+
+        $scope.setFrame = function(url) {
+            $scope.currentFrame = $sce.trustAsResourceUrl(url);
+        }
+
+        $scope.currentLink = function(index) {
+            $scope.activeLink = index;
+        }
+
 }])
 
 
@@ -243,48 +268,3 @@ angular.module('ontelsite',['ngRoute','ngAnimate'])
     };
 }])
 
-//.directive('equalize', ['$window', function ($window) {
-//    return {
-//        restrict: 'A',
-//        replace: true,
-//        //template: '<div></div>',
-//        link: function(scope, element, attrs) {
-//
-//            equalheight = function(container){
-//
-//                var currentTallest = 0,
-//                    currentRowStart = 0,
-//                    rowDivs = new Array(),
-//                    $el,
-//                    topPosition = 0;
-//                $(container).each(function() {
-//                    $el = $(this);
-//                    $($el).height('auto');
-////            console.log("element has loaded and its height is " + $el.height());
-//                    if (currentTallest < $el.height() && currentTallest !== 0 || currentTallest == 0){
-////                console.log("setting CT to " + $el.height());
-//                        currentTallest = $el.height();
-//                    }
-//
-//                    rowDivs.push($el);
-//                    currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
-//
-//                    for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
-//                        rowDivs[currentDiv].height(currentTallest);
-//                    }
-//                });
-//            }
-//
-//            angular.element($window).on('load', function () {
-//                equalheight('.servicedesc');
-//            });
-//
-//
-//            angular.element($window).on('resize', function () {
-//                equalheight('.servicedesc');
-//            });
-//
-//
-//        }
-//    };
-//}]);

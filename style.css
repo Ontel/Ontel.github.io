@@ -1166,6 +1166,8 @@ height: 100%;
 
 #contentframe {
     display: inline-block;
+    position: absolute;
+    right: 0;
     float: right;
     width: calc(100vw - 300px);
     height: calc(100vh - 60px);

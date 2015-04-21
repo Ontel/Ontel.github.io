@@ -8,6 +8,7 @@
     <div ng-repeat="(key,value) in links | groupBy: 'category'">
         <div class="category-header">{{key}}</div>
         <div ng-repeat="link in value" class="card" ng-class="($parent.$index+'-'+$index==activeLink) ? 'active': ''" ng-click="setFrame(link.properties.url);currentLink($parent.$index+'-'+$index)">
+            <div class="active-bar"></div>
             <span>{{link.properties.title}}</span>
             <i class="fa fa-chevron-right"></i>
         </div>

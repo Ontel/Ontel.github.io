@@ -1236,6 +1236,10 @@ height: 100%;
     color: #999;
 }
 
+#tel a {
+    color: #444;
+}
+
 @media only screen and (max-width: 639px) {
 
     .cd-dropdown,

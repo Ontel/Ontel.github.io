@@ -482,7 +482,7 @@ header .container {
     border-bottom: 2px solid #ccc;
 }
 
-#team, #software, #services, #contact {
+#about, #team, #software, #services, #contact {
     position: relative;
     width: 100%;
     min-height: 400px;
@@ -493,7 +493,7 @@ header .container {
 }
 
 #team, #services, #about {
-    background: #f5f5f5;
+    background: #f5f5f5 !important;
     /*height: 52vh;*/
 }
 

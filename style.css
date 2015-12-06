@@ -482,7 +482,7 @@ header .container {
     border-bottom: 2px solid #ccc;
 }
 
-#about, #team, #software, #services, #contact {
+#team, #software, #services, #contact {
     position: relative;
     width: 100%;
     min-height: 400px;

@@ -1,0 +1,120 @@
+<topnav></topnav>
+<div id="" ng-class="{'drop-active': drop}">
+  <div class="product-header mgmt">
+    <div class="landing-text">MGMT Services</div>
+  </div>
+  <div class="product-container">
+    <div class="section intro">
+      <div class="content">
+        The high paced, data intensive, and highly collaborative nature of wireless projects is exactly why we love managing them. We share our customers’ enthusiasm for their networks and are proud to be partners in their efforts to deliver outstanding service and connectivity. We’ve delivered exceptional results for companies small and large across the nation on some of the most challenging network deployments. We bring innovative approaches and tools paired with experience, professionalism, and dedication to every project.
+      </div>
+    </div>
+  </div>
+  <div class="product-container">
+    <div class="section">
+      <div class="heading">MGMT Services</div>
+      <div class="content">
+        <div style="">Project and Construction management for all phases of site development, from design, real estate, to final site acceptance we understand the challenges faced deploying advanced communications networks and we are prepared to go the distance necessary to achieve the best results possible.</div>
+        <div class="feature-flex testing-intro-list">
+          <div>
+            <div class="body">Coordination with RF, RE, and CX</div>
+          </div>
+          <div>
+            <div class="body">Site Scoping</div>
+          </div>
+          <div>
+            <div class="body">Material and Equipment Scoping</div>
+          </div>
+          <div>
+            <div class="body">Construction Management</div>
+          </div>
+          <div>
+            <div class="body">Technical and Construction Quality Assurance</div>
+          </div>
+          <div>
+            <div class="body">Performance Analysis of teams and processes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-container">
+    <div class="section">
+      <div class="heading">Why Ontel?</div>
+      <div class="content feature-flex">
+        <div>
+          <div class="title">Experience</div>
+          <div class="body">Team-players with proven performance and professionalism</div>
+        </div>
+        <div>
+          <div class="title">Ingenuity</div>
+          <div class="body">Solutions-based problem solvers with 100% commitment to innovation and improvement</div>
+        </div>
+        <div>
+          <div class="title">Cost Savings</div>
+          <div class="body">Lower-cost alternative to recruitment, hiring, and on-boarding</div>
+        </div>
+        <div>
+          <div class="title">Flexibility</div>
+          <div class="body">Fixed-price and retainer-based services that blend flexibility and cost</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-container">
+    <div class="section">
+      <div class="heading">Recent Project Highlights</div>
+      <div class="content project-container">
+        <div class="project" ng-repeat="project in projects">
+          <div class="title">
+            <div>{{project.client}}</div>
+            <div>
+              <div><i class="icon ion-ios-calendar"></i> {{project.when}}</div>
+              <div><i class="icon ion-ios-location"></i> {{project.where}}</div>
+            </div>
+          </div>
+          <div>
+            <div>SOW:</div>
+            <div>{{project.sow}}</div>
+          </div>
+          <div>
+            <div>When:</div>
+            <div>{{project.when}}</div>
+          </div>
+          <div>
+            <div>Where:</div>
+            <div>{{project.where}}</div>
+          </div>
+          <div>
+            <div>Description:</div>
+            <div>{{project.description}}</div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="title">OLDER COMPLETED PROJECTS</div>
+          <ul>
+            <li>
+              Verizon NSB SE
+            </li>
+            <li>
+              Alcatel-Lucent Sprint Network Vision National Project Management
+            </li>
+            <li>
+              Ericsson T-Mobile Modernization FOA/NPI Implementation (Las Vegas)
+            </li>
+            <li>
+              Ericsson T-Mobile Southwest U1900 deployment (Las Vegas, Albuquerque, El Paso)
+            </li>
+            <li>
+              Ericsson AT&T Hawai’i Multi Carrier Overlay
+            </li>
+            <li>
+              Ericsson T-Mobile UMTS NYC and Outer Boroughs
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<site-footer></site-footer>

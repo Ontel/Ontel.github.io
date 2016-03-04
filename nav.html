@@ -1,0 +1,33 @@
+<header ng-class="{'drop': drop || mDrop}" ng-mouseleave="exitMenu()" class="noselect">
+  <div class="header-container navfixed flex-space-between white-text">
+    <div><img src="img/whitelogo.png"  ui-sref="home"></div>
+    <div></div>
+    <div class="nav-row no-select">
+      <div ui-sref="home" ng-mouseover="hoverMenu('home')">Home</div>
+      <div ng-click="toggleIcon()" ng-mouseover="hoverMenu('solutions')">Solutions</div>
+      <div ui-sref="pricing" ng-mouseover="hoverMenu('pricing')">Pricing</div>
+      <div ui-sref="about" ng-mouseover="hoverMenu('about')">About Us</div>
+      <div ui-sref="support" ng-mouseover="hoverMenu('support')">Support</div>
+      <div ui-sref="jobs" ng-mouseover="hoverMenu('jobs')">Jobs</div>
+    </div>
+    <div class="nav-button no-select" ng-click="toggleIcon()">
+      <!--<ng-md-icon icon="{{clickIcon}}" ng-attr-style="fill: #fff" size="48" options='{"rotation": "counterclock", "duration": 300}' style="fill: #fff"></ng-md-icon>-->
+      <div class="no-select hamburger hamburger--spin" ng-class="{'is-active': drop}">
+        <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="subnav">
+    <div ui-sref="swift" class="swift"><span>Swift Projects</span></div>
+    <div ui-sref="testing" class="testing"><span>Testing</span></div>
+    <div ui-sref="closeout" class="closeout"><span>Closeout</span></div>
+    <div ui-sref="gear" class="gear"><span>Gear</span></div>
+    <div ui-sref="management" class="mgmt"><span>MGMT</span></div>
+    <div ui-sref="pricing" class="mobile-only">Pricing</div>
+    <div ui-sref="about" class="mobile-only">About Us</div>
+    <div ui-sref="support" class="mobile-only">FAQ</div>
+    <div ui-sref="jobs" class="mobile-only">Jobs</div>
+  </div>
+</header>

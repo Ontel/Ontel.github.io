@@ -430,8 +430,7 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .titlecontainer { font-size: 2em; }
   .product-header .landing-text { font-size: 4em; }
   header .subnav > div { font-size: 1.25em; } }
-@media only screen and (min-width: 360px) { .sections .section-content .heading { margin: 2.5em 0em; }
-  .sections .section-content .heading .head { font-size: 1.8em; }
+@media only screen and (min-width: 360px) { .sections .section-content .heading .head { font-size: 1.8em; }
   .sections .section-content .heading .sub { font-size: 1.1em; }
   .sections .section-content .body { font-size: 1em; }
   .sections .cta { margin-top: 3em; } }

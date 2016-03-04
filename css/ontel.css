@@ -371,11 +371,12 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .sections .section-header { font-size: 3.8em; text-transform: uppercase; letter-spacing: 0.03em; text-align: center; width: 100%; margin: 20px 0px; margin-bottom: 50px; position: relative; }
   .sections .section-title { font-family: "brandon-grotesque"; letter-spacing: 0.05em; text-align: center; color: #FFF182; font-size: 1.6em; letter-spacing: 0.2em; font-weight: bold; text-transform: uppercase; text-align: center; mix-blend-mode: screen; }
   .sections .section-content { color: #fff; letter-spacing: 0.03em; width: 90%; max-width: 650px; }
-  .sections .section-content .heading { font-family: "brandon-grotesque"; margin-bottom: 2.4em; margin: 1.5em 0em; }
+  .sections .section-content .heading { font-family: "brandon-grotesque"; margin: 1.5em 0em; margin-bottom: 1.8em; }
   .sections .section-content .heading:after { display: block; content: ""; background: #ddd; height: 2px; width: 82px; position: relative; top: 0.4em; }
   .sections .section-content .heading .head { font-size: 1.5em; line-height: 1.2em; text-Transform: uppercase; font-weight: 600; letter-spacing: 0.06em; max-width: 1024px; margin-bottom: 0.3em; }
   .sections .section-content .heading .sub { letter-spacing: 0.05em; font-size: 0.9em; letter-spacing: 0.2em; font-weight: bold; text-transform: uppercase; mix-blend-mode: screen; margin-bottom: 1em; line-height: 1.2em; }
-  .sections .section-content .body { font-size: 0.9em; letter-spacing: 0.03em; line-height: 1.6em; font-weight: 300; margin: 0 auto; }
+  .sections .section-content .body { font-size: 0.9em; letter-spacing: 0.03em; line-height: 1.5em; font-weight: 300; margin: 0 auto; }
+  .sections .section-content .body .swift-cta { display: none; }
   .sections .cta { color: #fff; text-align: center; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8em; margin-top: 1.5em; padding: 12px 14px; border-radius: 2px; cursor: pointer; -webkit-transition: 0.3s all ease; transition: 0.3s all ease; }
   .sections .cta-container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; width: 290px; }
   .sections .cta-container .cta { -webkit-box-flex: 1; -webkit-flex: 1 0 0px; -ms-flex: 1 0 0px; flex: 1 0 0px; }
@@ -436,7 +437,10 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .sections .cta { margin-top: 3em; } }
 @media only screen and (min-width: 400px) { .sections .cta { font-size: 1em; }
   .cta-container { width: 340px; } }
-@media only screen and (min-width: 640px) { .sections .section-content .heading .sub { font-size: 1.2em; }
+@media only screen and (min-width: 640px) { .sections .section-content .body { line-height: 1.6em; }
+  .sections .section-content .body .swift-cta { display: inline-block; }
+  .sections .section-content .heading { margin-bottom: 2.4em; }
+  .sections .section-content .heading .sub { font-size: 1.2em; }
   .product-container .job-table .job { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; padding: 1.5em; }
   .product-container .job-table .job .title { text-align: left; }
   .product-container .job-table .job .location { color: #888; }

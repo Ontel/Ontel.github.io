@@ -1,67 +1,52 @@
 <topnav></topnav>
 <div id="fullpage" ng-class="{'drop-active': drop}" init-fp>
-<section class="section fullview motion-bg landing-slide">
-    <div class="video-container" ng-class="{'video-active-shade': showVideo}">
-        <div class="filter"></div>
-        <video autoplay loop class="fillWidth" id="ontelbg">
-            <source src="img/motion/NYC-Traffic.mp4" type="video/mp4" />
-            <source src="img/motion/NYC-Traffic.webm" type="video/webm" />
-        </video>
-        <div class="poster"></div>
-    </div>
-    <div class="landing-text" ng-class="{'active': showVideo, 'drop-active': drop}">
-        <div class="landing-animated ">
-            <!--fadeInDown-->
-            <img src="img/ontel-logo-text-white.svg" alt="Ontel">
+    <section class="section fullview motion-bg landing-slide">
+        <div class="video-container" ng-class="{'video-active-shade': showVideo}">
+            <div class="filter"></div>
+            <video autoplay loop class="fillWidth" id="ontelbg">
+                <source src="img/motion/NYC-Traffic.mp4" type="video/mp4" />
+                <source src="img/motion/NYC-Traffic.webm" type="video/webm" />
+            </video>
+            <div class="poster"></div>
         </div>
-        <div class="landing-subtext ">
-            <div>
-                <div>Management</div>
-                <div>Software</div>
+        <div class="landing-text" ng-class="{'active': showVideo, 'drop-active': drop}">
+            <div class="landing-animated ">
+                <!--fadeInDown-->
+                <img src="img/ontel-logo-text-white.svg" alt="Ontel">
             </div>
-            <div>
-                <div>Closeout</div>
-                <div>Testing</div>
+            <div class="landing-subtext ">
+                <div>
+                    <div>Management</div>
+                    <div>Software</div>
+                </div>
+                <div>
+                    <div>Closeout</div>
+                    <div>Testing</div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="sections plan section left">
-    <div class="section-content">
-        <div class="heading">
-            <div class="head">Build the Future</div>
-            <div class="sub">Technical and Management Services</div>
+    </section>
+    <section class="sections plan section left">
+        <div class="section-content">
+            <div class="heading">
+                <div class="head">Build the Future</div>
+                <div class="sub">Technical and Management Services</div>
+            </div>
+            <div class="body">Our clients build network infrastructure and we help them to do it better. We bring innovation, experience, and persistence to bear on each of our projects. We are constantly evolving and measuring ourselves, using data to make better decisions and building systems that create better outcomes. We are managers, technicians, and engineers dedicated to the success of our clients and driven by finding solutions to the challenges they face. </div>
         </div>
-        <div class="body">Our clients build network infrastructure and we help them to do it better. We bring innovation, experience, and persistence to bear on each of our projects. We are constantly evolving and measuring ourselves, using data to make better decisions and building systems that create better outcomes. We are managers, technicians, and engineers dedicated to the success of our clients and driven by finding solutions to the challenges they face. </div>
-    </div>
-  <div class="cta-container">
-      <div class="cta" ui-sref="closeout">Closeout <i class="icon ion-android-arrow-dropright"></i></div>
-      <div class="cta" ui-sref="management">MGMT <i class="icon ion-android-arrow-dropright"></i></div>
-  </div>
-</section>
-<section class="sections run section right">
-    <!--<div class="section-title ">Run</div>-->
-    <!--<div class="section-header">-->
-        <!--<span>Run</span>-->
-    <!--</div>-->
-    <div class="section-content ">
-        <div class="heading">
-            <div class="head">Automation for Everyone</div>
-            <div class="sub">Software for Wireless Contractors</div>
+        <div class="cta-container">
+            <div class="cta" ui-sref="closeout">Closeout <i class="icon ion-android-arrow-dropright"></i></div>
+            <div class="cta" ui-sref="management">MGMT <i class="icon ion-android-arrow-dropright"></i></div>
         </div>
-        <div class="body">Swift Projects™ is the most powerful mobile and desktop management software platform built specifically for wireless general contractors and telecommunications projects. With Swift, users QA and closeout live, get instant stats and statuses, schedule teams, manage documents, focus conversations, and most importantly - prevent surprises. Find out more about how Swift streamlines operations and eliminates excuses.</div>
-    </div>
-  <div class="cta" ui-sref="swift">Swift Projects <i class="icon ion-android-arrow-dropright"></i></div>
-</section>
-<!--<section class="sections close section left">-->
-    <!--&lt;!&ndash;<div class="section-title ">Close</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div class="section-header">&ndash;&gt;-->
-        <!--&lt;!&ndash;<span>Close</span>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--<div class="section-content">-->
-        <!--<div class="heading">Technical services and hardware on-demand</div>-->
-        <!--<div class="body">Our clients build network infrastructure around the world, and we help them do it better. We provide cell site testing, C.O.P. processing and validation, audit and scoping, site virtualization, and complete site development management services that augment your organization's construction and installation teams.</div>-->
-    <!--</div>-->
-  <!--<div class="cta">Services + Hardware <i class="icon ion-android-arrow-dropright"></i></div>-->
-<!--</section>-->
-    </div>
+    </section>
+    <section class="sections run section right">
+        <div class="section-content ">
+            <div class="heading">
+                <div class="head">Automation for Everyone</div>
+                <div class="sub">Software for Wireless Contractors</div>
+            </div>
+            <div class="body">Swift Projects™ is the most powerful mobile and desktop management software platform built specifically for wireless general contractors and telecommunications projects. With Swift, users QA and closeout live, get instant stats and statuses, schedule teams, manage documents, focus conversations, and most importantly - prevent surprises. <span class="swift-cta">Find out more about how Swift streamlines operations and eliminates excuses.</span></div>
+        </div>
+        <div class="cta" ui-sref="swift">Swift Projects <i class="icon ion-android-arrow-dropright"></i></div>
+    </section>
+</div>

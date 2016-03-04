@@ -121,18 +121,15 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .support-category .content .question:hover { color: #3C4A65; }
   .support-category:not(:nth-child(2)) { margin-top: 40px; }
   footer { background: #444A50; padding: 2em; color: #fff; }
-  footer .contain { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; max-width: 900px; margin: 0 auto; text-align: center; }
-  footer .contain > div { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  footer .contain { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2em; }
+  footer .contain > div { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
   footer .contain:first-child { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
   footer .contain:first-child > div { margin: 0em 1.5em; }
-  footer .contain:first-child > div:first-child { font-size: 1.25em; letter-spacing: 0.04em; }
-  footer .contain:first-child > div:first-child div { position: relative; cursor: pointer; -webkit-transition: 0.3s all ease; transition: 0.3s all ease; }
+  footer .contain:first-child > div:first-child { font-weight: bold; letter-spacing: 0.1em; font-size: 1.1em; text-transform: uppercase; margin-bottom: 1em; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+  footer .contain:first-child > div:first-child div { position: relative; margin: 0em 0.9em; cursor: pointer; -webkit-transition: 0.3s all ease; transition: 0.3s all ease; }
   footer .contain:first-child > div:first-child div:hover:after { opacity: 1; }
-  footer .contain:first-child > div:first-child div:after { content: "\f365"; display: none; font-family: "Ionicons"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; text-rendering: auto; line-height: 1; -webkit-font-smoothing: antialiased; font-size: 1.2em; margin-top: 0.25em; color: #fff; opacity: 0; -webkit-transition: 0.25s all ease; transition: 0.25s all ease; }
-  footer .contain:first-child > div:first-child div.dropdown { position: relative; }
-  footer .contain:first-child > div:first-child div.dropdown:after { content: "\f35f" !important; opacity: 1; color: #4FC6E6; }
-  footer .contain:first-child > div:last-child { display: none; }
-  footer .contain:first-child > div:last-child div { cursor: pointer; -webkit-transition: 0.3s all ease; transition: 0.3s all ease; }
+  footer .contain:first-child > div:last-child { text-transform: uppercase; font-size: 0.9em; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+  footer .contain:first-child > div:last-child div { cursor: pointer; -webkit-transition: 0.3s all ease; transition: 0.3s all ease; -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; -webkit-box-flex: 0; -webkit-flex: 0 auto; -ms-flex: 0 auto; flex: 0 auto; padding: 0.25em 1em; }
   footer .contain:first-child > div:last-child div:hover { opacity: 1; }
   footer .contain:first-child > div div { padding: 0.25em 0.45em; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 1px; }
   footer .contain:last-child { -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; margin-top: 1.4em; color: #ddd; letter-spacing: 0.05em; }
@@ -346,7 +343,6 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .section-divider { padding: 20px; background: #f0f0f0; color: #444; text-align: center; font-size: 1.2em; font-weight: 300; letter-spacing: 0.03em; }
   .section-divider a { text-decoration: none; color: #444; font-weight: 400; }
   .footer { background: #353C44; color: #fff; text-align: center; text-transform: uppercase; font-size: 0.9em; letter-spacing: 0.11em; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; height: 60px; padding: 0px 30px; }
-  footer .contain .dropdown { display: none; }
   .feature-flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
   .feature-flex > div { padding: 0em 1.2em; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; float: left; width: 100%; clear: none; box-sizing: border-box; position: relative; }
   .feature-flex > div > div { margin-bottom: 20px; }
@@ -455,18 +451,15 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .product-header .landing-text-sub { font-size: 1.4em; margin-top: 0.8em; }
   .sections { padding: 80px; }
   .sections .section-content .heading .head { font-size: 2.5em; }
-  footer .contain .dropdown { display: block; }
-  footer .contain:first-child > div:first-child { font-size: 1.25em; letter-spacing: 0.04em; }
-  footer .contain:first-child > div:first-child div { padding: 0.25em; }
-  footer .contain:first-child > div:first-child div:after { display: inherit; }
-  footer .contain:first-child > div:last-child { display: inherit; }
-  footer .contain:first-child > div div { -webkit-box-flex: 1; -webkit-flex: 1 0 0; -ms-flex: 1 0 0; flex: 1 0 0; }
-  footer .contain:last-child { margin-top: 2.4em; }
-  .product-container .project-container .project > div:first-child.title > div:last-child { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; } }
+  .product-container .project-container .project > div:first-child.title > div:last-child { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; }
+  footer .contain:first-child > div:last-child div:not(:last-child) { border-right: 1px solid #fff; }
+  footer .contain { font-size: 1em; }
+  footer .contain > div { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; } }
 @media only screen and (min-width: 701px) { /*.clientlogos {*/
   /*display: flex;*/
   /*width: 70%;*/
   /*}*/
+  footer .contain:first-child > div:last-child div { padding: 0.25em 1.25em; }
   .topnav li a { padding-left: 15px; padding-right: 15px; }
   #fullprodtable { display: block; }
   #mobileproducts { display: none; }

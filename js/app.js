@@ -250,7 +250,7 @@ app.directive('initFp', ['$rootScope', '$state', function($rootScope, $state) {
             $rootScope.$on("$stateChangeStart", function(event, next, current) {
                 if($state.current.name = 'home') {
                     $.fn.fullpage.destroy('all');
-                };
+                } else return;
             });
 
 

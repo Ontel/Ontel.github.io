@@ -9,7 +9,7 @@ var app = angular.module('ontelsite', [
     'ui.router',
     'ngMdIcons',
     //'hmTouchEvents'
-  'fox.scrollReveal'
+    'fox.scrollReveal'
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider, $uiViewScrollProvider) {
@@ -18,11 +18,11 @@ app.config(function($stateProvider, $urlRouterProvider, $uiViewScrollProvider) {
 
     $urlRouterProvider.otherwise("/");
     $stateProvider
-        .state('home', {
-            url: "/",
-            templateUrl: "views/main.html",
-            controller: "MainController"
-        })
+      .state('home', {
+          url: "/",
+          templateUrl: "views/main.html",
+          controller: "MainController"
+      })
       .state('jobs', {
           url: "/jobs",
           templateUrl: "views/jobs.html",
@@ -76,6 +76,16 @@ app.config(function($stateProvider, $urlRouterProvider, $uiViewScrollProvider) {
       .state('gear', {
           url: "/solutions/gear",
           templateUrl: "views/gear.html",
+          controller: "ProductController"
+      })
+      .state('swift-privacy', {
+          url: "/legal/privacy",
+          templateUrl: "views/privacy-policy.html",
+          controller: "ProductController"
+      })
+      .state('swift-tos', {
+          url: "/legal/terms-of-service",
+          templateUrl: "views/swift-tos.html",
           controller: "ProductController"
       });
 });
@@ -274,8 +284,8 @@ app.directive('topnav', ['$rootScope', '$timeout', '$state', function($rootScope
             scope.drop = false;
 
             $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-                  scope.drop = false;
-              });
+                scope.drop = false;
+            });
 
             scope.hoverMenu = function(page) {
                 switch(page) {
@@ -328,7 +338,11 @@ app.directive('topnav', ['$rootScope', '$timeout', '$state', function($rootScope
 
             angular.element(window).bind('scroll', function () {
                 scope.scroll = window.pageYOffset;
-                scope.height = document.querySelector('.product-header').offsetHeight;
+                try{
+                    scope.height = document.querySelector('.product-header').offsetHeight;
+                } catch(e){
+                    scope.height = 0;
+                }
                 if(scope.scroll > scope.height) {
                     element.addClass('offset');
                 } else {

@@ -124,19 +124,6 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .support-category .content .question { line-height: 1.4em; font-size: 1.4em; color: #5C76A7; cursor: pointer; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; }
   .support-category .content .question:hover { color: #3C4A65; }
   .support-category:not(:nth-child(2)) { margin-top: 40px; }
-  footer { background: #444A50; padding: 2em; color: #fff; }
-  footer .contain { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2em; }
-  footer .contain > div { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-justify-content: space-around; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
-  footer .contain:first-child { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
-  footer .contain:first-child > div { margin: 0em 1.5em; }
-  footer .contain:first-child > div:first-child { font-weight: bold; letter-spacing: 0.1em; font-size: 1.1em; text-transform: uppercase; margin-bottom: 1em; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
-  footer .contain:first-child > div:first-child div { position: relative; margin: 0em 0.9em; cursor: pointer; -webkit-transition: 0.3s all ease; transition: 0.3s all ease; }
-  footer .contain:first-child > div:first-child div:hover:after { opacity: 1; }
-  footer .contain:first-child > div:last-child { text-transform: uppercase; font-size: 0.9em; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
-  footer .contain:first-child > div:last-child div { cursor: pointer; -webkit-transition: 0.3s all ease; transition: 0.3s all ease; -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; -webkit-box-flex: 0; -webkit-flex: 0 auto; -ms-flex: 0 auto; flex: 0 auto; padding: 0.25em 1em; }
-  footer .contain:first-child > div:last-child div:hover { opacity: 1; }
-  footer .contain:first-child > div div { padding: 0.25em 0.45em; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 1px; }
-  footer .contain:last-child { -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; margin-top: 1.4em; color: #ddd; letter-spacing: 0.05em; }
   /*!
    * Hamburgers
    * @description Tasty CSS-animated hamburgers
@@ -347,7 +334,19 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .section-divider { padding: 20px; background: #f0f0f0; color: #444; text-align: center; font-size: 1.2em; font-weight: 300; letter-spacing: 0.03em; }
   .section-divider a { text-decoration: none; color: #444; font-weight: 400; }
   .footer { background: #353C44; color: #fff; text-align: center; text-transform: uppercase; font-size: 0.9em; letter-spacing: 0.11em; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 60px; padding: 0px 30px; }
-  footer .contain .dropdown { display: none; }
+  footer { background: #444A50; padding: 2em; color: #fff; }
+  footer .contain { display: -webkit-box; display: -ms-flexbox; display: flex; max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2em; }
+  footer .contain > div { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  footer .contain:first-child { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  footer .contain:first-child > div { margin: 0em 1.5em; }
+  footer .contain:first-child > div:first-child { font-weight: bold; letter-spacing: 0.1em; font-size: 1.1em; text-transform: uppercase; margin-bottom: 1em; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  footer .contain:first-child > div:first-child div { position: relative; margin: 0em 0.9em; cursor: pointer; -webkit-transition: 0.3s all ease; transition: 0.3s all ease; }
+  footer .contain:first-child > div:first-child div:hover:after { opacity: 1; }
+  footer .contain:first-child > div:last-child { text-transform: uppercase; font-size: 0.9em; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  footer .contain:first-child > div:last-child div { cursor: pointer; -webkit-transition: 0.3s all ease; transition: 0.3s all ease; -ms-flex-item-align: center; align-self: center; -webkit-box-flex: 0; -ms-flex: 0 auto; flex: 0 auto; padding: 0.25em 1em; }
+  footer .contain:first-child > div:last-child div:hover { opacity: 1; }
+  footer .contain:first-child > div div { padding: 0.25em 0.45em; -webkit-box-flex: 0; -ms-flex: 0 0 auto; flex: 0 0 auto; min-width: 1px; }
+  footer .contain:last-child { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; margin-top: 1.4em; color: #ddd; letter-spacing: 0.05em; }
   .feature-flex { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
   .feature-flex > div { padding: 0em 1.2em; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; float: left; width: 100%; clear: none; box-sizing: border-box; position: relative; }
   .feature-flex > div > div { margin-bottom: 20px; }
@@ -361,10 +360,10 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .has-checks-list li .icon { position: absolute; left: 1.6em; color: #3cb878; }
   .coming-soon { font-family: 'Open Sans'; width: 100vw; height: 100%; font-size: 4vw; font-weight: 300; text-transform: uppercase; color: #ddd; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
   .sections { padding: 20px; position: relative; min-height: 420px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-  .sections.plan { background: -webkit-linear-gradient(rgba(132, 228, 194, 0.7), rgba(96, 208, 156, 0.7)), url(../img/tower-landscape.jpg) no-repeat center center; background: linear-gradient(rgba(132, 228, 194, 0.7), rgba(96, 208, 156, 0.7)), url(../img/tower-landscape.jpg) no-repeat center center; background-size: cover; }
+  .sections.plan { background: -webkit-linear-gradient(rgba(117, 197, 169, 0.7), rgba(81, 183, 136, 0.7)), url(../img/tower-landscape.jpg) no-repeat center center; background: linear-gradient(rgba(117, 197, 169, 0.7), rgba(81, 183, 136, 0.7)), url(../img/tower-landscape.jpg) no-repeat center center; background-size: cover; }
   .sections.plan .section-title, .sections.plan .heading .sub { color: #66eabc; }
-  .sections.plan .cta { background: #66eabc; }
-  .sections.plan .cta:hover { background: rgba(102, 234, 188, 0.85); }
+  .sections.plan .cta { background: #61dcb0; }
+  .sections.plan .cta:hover { background: rgba(97, 220, 176, 0.85); }
   .sections.run { background: -webkit-linear-gradient(rgba(3, 55, 125, 0.7), rgba(11, 19, 49, 0.7)), url(https://images.unsplash.com/photo-1429041966141-44d228a42775?crop=entropy&dpr=2&fm=jpg&h=1100&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1925) no-repeat center center; background: linear-gradient(rgba(3, 55, 125, 0.7), rgba(11, 19, 49, 0.7)), url(https://images.unsplash.com/photo-1429041966141-44d228a42775?crop=entropy&dpr=2&fm=jpg&h=1100&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1925) no-repeat center center; background-size: cover; }
   .sections.run .section-title, .sections.run .heading .sub { color: #4FC6E6; }
   .sections.run .cta { background: #4FC6E6; }
@@ -458,9 +457,9 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .product-header .landing-text-sub { font-size: 1.4em; margin-top: 0.8em; }
   .sections { padding: 80px; }
   .sections .section-content .heading .head { font-size: 2.5em; }
-  footer .contain:first-child > div:last-child div:not(:last-child) { border-right: 1px solid #fff; }
   footer .contain { font-size: 1em; }
-  footer .contain > div { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; }
+  footer .contain:first-child > div:last-child div:not(:last-child) { border-right: 1px solid #fff; }
+  footer .contain > div { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
   .product-container .project-container .project > div:first-child.title > div:last-child { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; } }
 @media only screen and (min-width: 701px) { /*.clientlogos {*/
   /*display: flex;*/
@@ -487,7 +486,7 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .menu-dropdown .info { font-size: 0.5em; }
   .landing-subtext { max-width: 940px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
   .landing-subtext > div { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-flex: 0; -ms-flex: 0; flex: 0; }
-  .landing-subtext > div > div { -webkit-box-flex: 0; -ms-flex: 0; flex: 0; padding: 0.3em; border-right: 1px solid #fff; }
+  .landing-subtext > div > div { -webkit-box-flex: 0; -ms-flex: 0; flex: 0; padding: 0.3em; border-right: 1px solid rgba(255, 255, 255, 0.5); }
   .landing-subtext > div:last-child > div:last-child { border-right: 0px; } }
 @media only screen and (min-width: 1024px) { .clientlogos > .col { -webkit-box-flex: 0; -ms-flex: 0 1 auto; flex: 0 1 auto; width: 22%; }
   .clientlogos { width: 50%; float: left; }

@@ -11,7 +11,7 @@ $testing-image: 'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?cr
 $testing-c1: #9CA0AB;
 $testing-c2: #50535F;
 //closeout
-$closeout-image: 'https://images.unsplash.com/photo-1415226581130-91cb7f52f078?crop=entropy&dpr=2&fm=jpg&h=1100&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1925';
+$closeout-image: 'https://hd.unsplash.com/photo-1417733403748-83bbc7c05140';
 $closeout-c1: #D27979;
 $closeout-c2: #6D283F;
 //gear
@@ -19,7 +19,7 @@ $gear-image: 'https://images.unsplash.com/photo-1445283142063-f4802ea5aac3?ixlib
 $gear-c1: #79D2A2;
 $gear-c2: #286D48;
 //mgmt
-$mgmt-image: 'https://images.unsplash.com/photo-1449182325215-d517de72c42d?ixlib=rb-0.3.5&q=80&fm=jpg&fit=max&s=528f9852c102ac3eb817c12aa758902a';
+$mgmt-image: 'https://hd.unsplash.com/photo-1444426724550-c7bfccd051ee';
 $mgmt-c1: #B4C2E8;
 $mgmt-c2: #51576F;
 
@@ -836,15 +836,15 @@ ng-md-icon > svg {
     justify-content: center;
     //align-items: flex-start;
     &.plan {
-      background: linear-gradient(rgba(234,185,119,0.7), rgba(195,140,64,0.7)), url(https://images.unsplash.com/photo-1443816139780-be3637784fe0?crop=entropy&dpr=2&fm=jpg&h=1100&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1925) no-repeat center center;
+      background: linear-gradient(rgba(132, 228, 194, 0.7), rgba(96, 208, 156, 0.7)), url(../img/tower-landscape.jpg) no-repeat center center;
       background-size: cover;
       .section-title, .heading .sub {
-        color: #F7CF32;
+        color: #66eabc;
       }
       .cta {
-        background: #F7CF32;
+        background: #66eabc;
         &:hover {
-          background: rgba(#F7CF32, 0.85)
+          background: rgba(#66eabc, 0.85)
         }
       }
     }
@@ -1295,6 +1295,15 @@ ng-md-icon > svg {
     font-size: 1.2em;
   }
 
+  .contact-info {
+    span {
+      display: inline-block;
+    }
+    > div:last-child {
+      display: none;
+    }
+  }
+
   .product-container {
     .job-table {
       .job {
@@ -1359,21 +1368,39 @@ ng-md-icon > svg {
       }
     }
     .contain {
+      > div {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
       &:first-child {
         > div {
           //flex: 1 0 0;
           &:first-child {
-            font-size: 1.25em;
-            letter-spacing: 0.04em;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+            justify-content: center;
             div {
-              padding: 0.25em;
+              position: relative;
+              margin: 0em 0.9em;
+              cursor: pointer;
+              transition: 0.3s all ease;
+              padding: 0.25em 0.45em;
+              flex: 0 0 auto;
+              min-width: 1px;
               &:after {
                 display: inherit;
               }
             }
           }
           &:last-child {
-            display: inherit;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            justify-content: center;
           }
           div {
             flex: 1 0 0;

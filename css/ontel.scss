@@ -1736,3 +1736,12 @@ ng-md-icon > svg {
     }
   }
 }
+
+@media only screen and (max-width: 639px) {
+  .sections {
+    &.left, &.right {
+      height: auto !important;
+      padding-bottom: 50px;
+    }
+  }
+}

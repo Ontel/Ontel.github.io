@@ -527,5 +527,6 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
 @media only screen and (min-width: 1100px) { .arr { display: inline; }
   .desktop-slide { display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; }
   .menu-dropdown .info { font-size: 0.65em; } }
+@media only screen and (max-width: 639px) { .sections.left, .sections.right { height: auto !important; padding-bottom: 50px; } }
 
 

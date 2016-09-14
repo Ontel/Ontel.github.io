@@ -284,7 +284,7 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   a { text-decoration: none; }
   .hidden { display: none; }
   .noselect { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
-  .poster { width: 100%; height: 100%; display: block; background: -webkit-linear-gradient(rgba(117, 140, 197, 0.7), rgba(206, 147, 112, 0.42)), url("../img/motion/cover.png") no-repeat center center; background: linear-gradient(rgba(117, 140, 197, 0.7), rgba(206, 147, 112, 0.42)), url("../img/motion/cover.png") no-repeat center center; background-size: cover; }
+  .poster { width: 100%; height: 100%; display: block; background: -webkit-linear-gradient(rgba(117, 140, 197, 0.7), rgba(206, 147, 112, 0.48)), url("../img/motion/cover.png") no-repeat center center; background: linear-gradient(rgba(117, 140, 197, 0.7), rgba(206, 147, 112, 0.48)), url("../img/motion/cover.png") no-repeat center center; background-size: cover; }
   #ontelbg { display: none; }
   .video-container { height: 100%; position: relative; -webkit-transition: all 0.3s linear; transition: all 0.3s linear; }
   .video-active-blur, .over-blur { -webkit-filter: blur(6px); filter: blur(6px); }

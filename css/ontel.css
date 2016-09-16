@@ -124,6 +124,8 @@ ng-md-icon > svg { -webkit-transition: width 750ms ease-in-out, height 750ms eas
   .support-category .content .question { line-height: 1.4em; font-size: 1.4em; color: #5C76A7; cursor: pointer; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; }
   .support-category .content .question:hover { color: #3C4A65; }
   .support-category:not(:nth-child(2)) { margin-top: 40px; }
+  .standard-btn { padding: 12px 14px; text-transform: uppercase; margin: 0 8px; width: 280px; color: #fff; text-align: center; font-size: 1.2em; letter-spacing: 0.08em; border-radius: 4px; font-weight: 300; cursor: pointer; margin-bottom: 0.3em; background: #258199; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  .support-flex { max-width: 800px; margin: 0 auto; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal !important; -webkit-box-direction: normal !important; -ms-flex-direction: row !important; flex-direction: row !important; -ms-flex-pack: distribute !important; justify-content: space-around !important; -ms-flex-wrap: wrap; flex-wrap: wrap; }
   /*!
    * Hamburgers
    * @description Tasty CSS-animated hamburgers

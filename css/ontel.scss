@@ -23,7 +23,7 @@ $mgmt-image: 'https://hd.unsplash.com/photo-1444426724550-c7bfccd051ee';
 $mgmt-c1: #B4C2E8;
 $mgmt-c2: #51576F;
 
-$support-image: 'https://images.unsplash.com/photo-1451421924504-c52d431cdad5?crop=entropy&dpr=2&fm=jpg&h=1100&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1925';
+$support-image: 'https://hd.unsplash.com/photo-1424298397478-4bd87a6a0f0c';
 
 @mixin entity-bg($image,$c1,$c2,$alpha) {
   background: linear-gradient(rgba($c1, $alpha), rgba($c2, $alpha)), url($image) no-repeat center center;

@@ -47,11 +47,12 @@
     background-size: cover;
   }
   &.about {
-    background: linear-gradient(rgba(156, 160, 171, 0.7), rgba(80, 83, 95, 0.7)), url(https://images.unsplash.com/photo-1422486578093-18e296095a04?crop=entropy&dpr=2&fm=jpg&h=1100&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1925) no-repeat center center;
+    background: linear-gradient(rgba(156, 160, 171, 0.7), rgba(80, 83, 95, 0.7)), url(https://images.unsplash.com/photo-1422486578093-18e296095a04?crop=entropy&dpr=2&fm=jpg&h=1100&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1925) no-repeat bottom center;
     background-size: cover;
   }
   &.support {
-    @include entity-bg($support-image,$testing-c1,$testing-c2,0.7);
+    background: linear-gradient(rgba($testing-c1, 0.7), rgba($testing-c2, 0.7)), url($support-image) no-repeat bottom center;
+    background-size: cover;
   }
   &.pricing {
     background: linear-gradient(rgba(156, 160, 171, 0.7), rgba(80, 83, 95, 0.7)), url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&dpr=2&fm=jpg&h=1100&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1925) no-repeat center center;

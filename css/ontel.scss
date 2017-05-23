@@ -11,7 +11,7 @@ $testing-image: 'https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?cr
 $testing-c1: #9CA0AB;
 $testing-c2: #50535F;
 //closeout
-$closeout-image: 'https://hd.unsplash.com/photo-1417733403748-83bbc7c05140';
+$closeout-image: 'https://images.unsplash.com/photo-1417733403748-83bbc7c05140';
 $closeout-c1: #D27979;
 $closeout-c2: #6D283F;
 //gear
@@ -19,11 +19,11 @@ $gear-image: 'https://images.unsplash.com/photo-1445283142063-f4802ea5aac3?ixlib
 $gear-c1: #79D2A2;
 $gear-c2: #286D48;
 //mgmt
-$mgmt-image: 'https://hd.unsplash.com/photo-1444426724550-c7bfccd051ee';
+$mgmt-image: 'https://images.unsplash.com/photo-1444426724550-c7bfccd051ee';
 $mgmt-c1: #B4C2E8;
 $mgmt-c2: #51576F;
 
-$support-image: 'https://hd.unsplash.com/photo-1424298397478-4bd87a6a0f0c';
+$support-image: 'https://images.unsplash.com/photo-1424298397478-4bd87a6a0f0c';
 
 @mixin entity-bg($image,$c1,$c2,$alpha) {
   background: linear-gradient(rgba($c1, $alpha), rgba($c2, $alpha)), url($image) no-repeat center center;

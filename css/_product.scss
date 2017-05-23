@@ -481,3 +481,17 @@
     background: rgba(68,74,80,0.85);
   }
 }
+
+.downloads {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  .google {
+    width: 228px;
+  }
+  .apple {
+    width: 200px;
+  }
+}

@@ -9,6 +9,9 @@
       <div ui-sref="about" ng-mouseover="hoverMenu('about')">About Us</div>
       <div ui-sref="support" ng-mouseover="hoverMenu('support')">Support</div>
       <div ui-sref="jobs" ng-mouseover="hoverMenu('jobs')">Jobs</div>
+      <div ng-mouseover="hoverMenu('Blog')">
+        <a href="https://kb.ontel.co/" style="color: #fff">Blog</a>
+      </div>
     </div>
     <div class="nav-button no-select" ng-click="toggleIcon()">
       <!--<ng-md-icon icon="{{clickIcon}}" ng-attr-style="fill: #fff" size="48" options='{"rotation": "counterclock", "duration": 300}' style="fill: #fff"></ng-md-icon>-->
@@ -29,5 +32,8 @@
     <div ui-sref="about" class="mobile-only">About Us</div>
     <div ui-sref="support" class="mobile-only">FAQ</div>
     <div ui-sref="jobs" class="mobile-only">Jobs</div>
+    <div class="mobile-only">
+      <a href="https://kb.ontel.co/" style="color: #fff">Blog</a>
+    </div>
   </div>
 </header>
